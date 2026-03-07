@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35cbb165efae2544e9b0ffde7955727d, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelName: 
+  levelType: Fire
   levelId: 1
-  isCompleted: 0
   level: {fileID: 3217324638445360361, guid: 16b70f779a47a174e851677548504eee, type: 3}
-  EntryPoint: {fileID: 0}
-  ExitPoint: {fileID: 0}

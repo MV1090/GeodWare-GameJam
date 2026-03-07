@@ -12,9 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35cbb165efae2544e9b0ffde7955727d, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelName: 
-  levelId: 2
-  isCompleted: 0
+  levelType: Water
+  levelId: 1
   level: {fileID: 7169161195161894258, guid: 6f4cf074ae2f67c46a72bf0971a89b41, type: 3}
-  EntryPoint: {fileID: 0}
-  ExitPoint: {fileID: 0}

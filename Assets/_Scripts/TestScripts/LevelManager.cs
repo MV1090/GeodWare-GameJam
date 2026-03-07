@@ -1,46 +1,74 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+
 
 public class LevelManager : MonoBehaviour
 {
+    static LevelManager instance;
+
     public Level_Catalog_Scriptable levelCatalog;
-
-
     private LevelSegments previousLevel;
+    private HashSet<Level_Scriptable> completedLevels = new HashSet<Level_Scriptable>();
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
 
+    private void Start()
+    {
+        if (levelCatalog == null || levelCatalog.allLevels.Count == 0)
+        {
+            Debug.LogError("Level Catalog is not assigned or contains no levels. Please assign a Level Catalog with levels.");
+            return;
+        }
+
+        LoadLevel(levelCatalog.allLevels[0]);
+        completedLevels.Add(levelCatalog.allLevels[0]);
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
-            LoadNextLevel(0);
+            LoadNextLevelByType("Earth");
         }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            LoadNextLevel(1);
+            LoadNextLevelByType("Water");
         }
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            LoadNextLevel(2);
-        }
-        
+            LoadNextLevelByType("Fire");
+        }        
     }
 
-    
-    private void LoadNextLevel(int levelToLoad)
-    {      
-               
-        
-        if (levelToLoad >= levelCatalog.allLevels.Count)
-        {
-            Debug.LogWarning("No more levels available. You have completed all levels!");
-            return;
-        }
+    private void LoadNextLevelByType(string levelType)
+    {
+        Level_Scriptable levelToLoad = levelCatalog.allLevels
+            .Where(level => level.levelType == levelType && !completedLevels.Contains(level))
+            .OrderBy(level => level.levelId)
+            .FirstOrDefault();
 
-        LoadLevel(levelCatalog.allLevels[levelToLoad]);
-    }    
+        if (levelToLoad != null)
+        {
+            LoadLevel(levelToLoad);
+            completedLevels.Add(levelToLoad);
+        }
+        else
+        {
+            Debug.LogWarning($"No incomplete levels of type {levelType}");
+        }
+    }
 
     private void LoadLevel(Level_Scriptable levelData)
     {
@@ -54,10 +82,15 @@ public class LevelManager : MonoBehaviour
             return;
         }
 
-        Vector3 offset = previousLevel.exitPoint.position - nextLevel.entryPoint.position;
-
-        nextLevelObj.transform.position += offset;
+        AlignLevels(previousLevel, nextLevel);
 
         previousLevel = nextLevel;
+
+    }
+
+    void AlignLevels(LevelSegments from, LevelSegments to)
+    {
+        Vector3 offset = from.exitPoint.position - to.entryPoint.position;
+        to.transform.position += offset;
     }
 }
