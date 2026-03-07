@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    static LevelManager instance;
+    public static LevelManager instance;
 
     public Level_Catalog_Scriptable levelCatalog;
     private LevelSegments previousLevel;
@@ -36,23 +36,10 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            LoadNextLevelByType("Earth");
-        }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            LoadNextLevelByType("Water");
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LoadNextLevelByType("Fire");
-        }        
+              
     }
 
-    private void LoadNextLevelByType(string levelType)
+    public void LoadNextLevelByType(string levelType)
     {
         Level_Scriptable levelToLoad = levelCatalog.allLevels
             .Where(level => level.levelType == levelType && !loadedLevels.Contains(level))
@@ -88,7 +75,7 @@ public class LevelManager : MonoBehaviour
 
     }
 
-    void AlignLevels(LevelSegments from, LevelSegments to)
+    private void AlignLevels(LevelSegments from, LevelSegments to)
     {
         Vector3 offset = from.exitPoint.position - to.entryPoint.position;
         to.transform.position += offset;

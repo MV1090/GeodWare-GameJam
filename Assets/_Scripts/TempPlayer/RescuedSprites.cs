@@ -1,17 +1,17 @@
 using UnityEngine;
 
 public class RescuedSprites : MonoBehaviour
-{
+{   
     public enum ElementSprite
     {
-        Earth, 
+        Earth,
         Air,
         Fire,
         Water,
         Default
     }
 
-    private ElementSprite currentState = ElementSprite.Default;
+    [SerializeField] private ElementSprite currentState = ElementSprite.Default;
 
     public ElementSprite GetCurrentState()
     {

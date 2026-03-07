@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class TempPLayer : MonoBehaviour
 {
+
+    public static TempPLayer instance;
+
+    public RescuedSprites rescuedSprites;
+
     [Header("Movement")]
     public float moveSpeed = 8f;
 
@@ -19,14 +24,17 @@ public class TempPLayer : MonoBehaviour
     private float moveInput;
 
     void Awake()
-    {
+    {        
+        instance = this;
         rb = GetComponent<Rigidbody2D>();
+        rescuedSprites = GetComponent<RescuedSprites>();
     }
 
     void Update()
     {
         HandleInput();
         HandleJump();
+        //ChangeSpriteBasedOnState();
     }
 
     void FixedUpdate()
@@ -57,6 +65,39 @@ public class TempPLayer : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
     }
+
+    //void ChangeSpriteBasedOnState()
+    //{
+    //    if (Input.GetKeyDown("1")) 
+    //    { 
+    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Earth);
+    //        return; 
+    //    }
+
+    //    if (Input.GetKeyDown("2"))
+    //    {
+    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Air);
+    //        return;
+    //    }
+
+    //    if (Input.GetKeyDown("3"))
+    //    {
+    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Fire);
+    //        return;
+    //    }
+
+    //    if (Input.GetKeyDown("4"))
+    //    {
+    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Water);
+    //        return;
+    //    }
+
+    //    if (Input.GetKeyDown("5"))
+    //    {
+    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Default);
+    //        return;
+    //    }
+    //}
 
     void OnDrawGizmosSelected()
     {
