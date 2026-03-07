@@ -20,6 +20,8 @@ public class LevelManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        RandomizeLevels();
     }
 
     private void Start()
@@ -32,11 +34,6 @@ public class LevelManager : MonoBehaviour
 
         LoadLevel(levelCatalog.allLevels[0]);
         loadedLevels.Add(levelCatalog.allLevels[0]);
-    }
-
-    private void Update()
-    {
-              
     }
 
     public void LoadNextLevelByType(string levelType)
@@ -73,6 +70,24 @@ public class LevelManager : MonoBehaviour
 
         previousLevel = nextLevel;
 
+    }
+
+    private void RandomizeLevels()
+    {
+        HashSet<int> assignedIds = new HashSet<int>();
+
+        foreach (var level in levelCatalog.allLevels)
+        {
+            int levelId;
+
+            do
+            {
+                levelId = System.Guid.NewGuid().GetHashCode();
+            } while (assignedIds.Contains(levelId));
+
+            level.levelId = levelId;
+            assignedIds.Add(levelId);
+        }
     }
 
     private void AlignLevels(LevelSegments from, LevelSegments to)
