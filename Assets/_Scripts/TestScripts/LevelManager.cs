@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 
     public Level_Catalog_Scriptable levelCatalog;
     private LevelSegments previousLevel;
-    private HashSet<Level_Scriptable> completedLevels = new HashSet<Level_Scriptable>();
+    private HashSet<Level_Scriptable> loadedLevels = new HashSet<Level_Scriptable>();
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
         }
 
         LoadLevel(levelCatalog.allLevels[0]);
-        completedLevels.Add(levelCatalog.allLevels[0]);
+        loadedLevels.Add(levelCatalog.allLevels[0]);
     }
 
     private void Update()
@@ -55,14 +55,14 @@ public class LevelManager : MonoBehaviour
     private void LoadNextLevelByType(string levelType)
     {
         Level_Scriptable levelToLoad = levelCatalog.allLevels
-            .Where(level => level.levelType == levelType && !completedLevels.Contains(level))
+            .Where(level => level.levelType == levelType && !loadedLevels.Contains(level))
             .OrderBy(level => level.levelId)
             .FirstOrDefault();
 
         if (levelToLoad != null)
         {
             LoadLevel(levelToLoad);
-            completedLevels.Add(levelToLoad);
+            loadedLevels.Add(levelToLoad);
         }
         else
         {

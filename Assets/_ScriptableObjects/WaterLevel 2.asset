@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35cbb165efae2544e9b0ffde7955727d, type: 3}
-  m_Name: Level 2
+  m_Name: WaterLevel 2
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   levelType: Water
-  levelId: 1
-  level: {fileID: 7169161195161894258, guid: 6f4cf074ae2f67c46a72bf0971a89b41, type: 3}
+  levelId: 2
+  level: {fileID: 8175981182851970140, guid: efa873280ebaa4e6ca7b266ccee7e2b8, type: 3}
