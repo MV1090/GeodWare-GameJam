@@ -6,7 +6,7 @@ public class WaterSprite : BaseSprite
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<TempPLayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Fire);
+            collision.gameObject.GetComponent<TempPLayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Water);
 
             Destroy(gameObject);
         }

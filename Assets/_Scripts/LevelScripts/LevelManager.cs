@@ -34,6 +34,7 @@ public class LevelManager : MonoBehaviour
 
         LoadLevel(levelCatalog.allLevels[0]);
         loadedLevels.Add(levelCatalog.allLevels[0]);
+        TempPLayer.instance.transform.position = previousLevel.spawnPoint.position;
     }
 
     public void LoadNextLevelByType(string levelType)

@@ -25,7 +25,8 @@ public class LeverPull : MonoBehaviour
         foreach (GameObject obj in effectedObjects)
         {            
             Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
-            rb.gravityScale = 1f;
+            //rb.gravityScale = 1f;
+            rb.simulated = true;
         }
 
         isPulled = true;
