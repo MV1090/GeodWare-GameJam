@@ -10,10 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1071508b472e9f14991ca6936b4b02e0, type: 3}
-  m_Name: Z -Level Catalog
+  m_Name: Test-Cat
   m_EditorClassIdentifier: Assembly-CSharp::Level_Catalog_Scriptable
-  allLevels:
-  - {fileID: 11400000, guid: 220188a18f235f94184b1379448abfc4, type: 2}
-  - {fileID: 11400000, guid: e3c2abef0530d4d44a30ffab3a556676, type: 2}
-  - {fileID: 11400000, guid: 3373d8f2fc562d54c927a3663298f97a, type: 2}
-  - {fileID: 11400000, guid: 3c194d506e6f87d468aed316dc0f5282, type: 2}
+  allLevels: []

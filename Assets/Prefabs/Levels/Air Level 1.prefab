@@ -249,7 +249,7 @@ Transform:
   - {fileID: 4864604243450955230}
   - {fileID: 7095278642571388882}
   - {fileID: 6409467825965965633}
-  - {fileID: 1555976164879423592}
+  - {fileID: 1303003364813493273}
   - {fileID: 4218468671774225110}
   - {fileID: 7442208497385070747}
   m_Father: {fileID: 0}
@@ -28252,7 +28252,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!1001 &787718111472688986
+--- !u!1001 &2698632305210136960
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -28260,64 +28260,64 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5617796391131014104}
     m_Modifications:
-    - target: {fileID: 470100562284895075, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
-      propertyPath: m_Name
-      value: EarthSprite
-      objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.3513
+      value: -20.27
       objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.010985
+      value: 6.87
       objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+    - target: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5339914320353856440, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
+      propertyPath: m_Name
+      value: WaterSprite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
---- !u!1 &894149839221900345 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 470100562284895075, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
-  m_PrefabInstance: {fileID: 787718111472688986}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1555976164879423592 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
+--- !u!4 &1303003364813493273 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
-  m_PrefabInstance: {fileID: 787718111472688986}
+  m_CorrespondingSourceObject: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
+  m_PrefabInstance: {fileID: 2698632305210136960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8027763096448078392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5339914320353856440, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
+  m_PrefabInstance: {fileID: 2698632305210136960}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4034186791782800723
 PrefabInstance:
@@ -28397,6 +28397,10 @@ PrefabInstance:
     - target: {fileID: 4801316967245294300, guid: 235f46427bd0c50479f2df48ef4e8ab0, type: 3}
       propertyPath: moveDistance
       value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4801316967245294300, guid: 235f46427bd0c50479f2df48ef4e8ab0, type: 3}
+      propertyPath: moveHorizontal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6694452448926370543, guid: 235f46427bd0c50479f2df48ef4e8ab0, type: 3}
       propertyPath: m_Name
@@ -28532,7 +28536,7 @@ PrefabInstance:
     - target: {fileID: 3540373622650090116, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
       propertyPath: 'effectedObjects.Array.data[0]'
       value: 
-      objectReference: {fileID: 894149839221900345}
+      objectReference: {fileID: 8027763096448078392}
     - target: {fileID: 3540373622650090116, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
       propertyPath: 'effectedObjects.Array.data[1]'
       value: 
