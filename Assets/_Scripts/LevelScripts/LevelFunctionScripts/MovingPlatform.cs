@@ -42,11 +42,11 @@ public class MovingPlatform : MonoBehaviour
         Rigidbody2D rbPlayer = collision.rigidbody;
         if (rbPlayer != null)
         {
-            
+
             foreach (ContactPoint2D contact in collision.contacts)
             {
-                if (contact.normal.y > 0.9f) 
-                {                    
+                if (contact.normal.y > 0.9f)
+                {
                     rbPlayer.position += moveDelta;
                 }
             }
