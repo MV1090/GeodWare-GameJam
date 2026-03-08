@@ -76,14 +76,13 @@ public class TempPLayer : MonoBehaviour
        
     void PullLever()
     {
-
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 0.5f);
             foreach (var hit in hits)
             {
                 LeverPull lever = hit.GetComponent<LeverPull>();
-                if (lever != null && lever.canBePulled)
+                if (lever != null)
                 {
                     lever.PullLever();
                     break;

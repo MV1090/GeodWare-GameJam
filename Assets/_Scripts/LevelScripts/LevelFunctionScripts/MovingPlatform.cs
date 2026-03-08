@@ -5,18 +5,26 @@ public class MovingPlatform : MonoBehaviour
     public float moveDistance = 5f;
     public float moveSpeed = 2f;
 
+    public bool moveHorizontal = false;
+    public bool moveVertical = false;
+
     private Rigidbody2D rb;
     private Vector2 previousPos;
     private Vector2 moveDelta;
-    private Vector3 startPos;
-    private Vector3 targetPos;
+    private Vector2 startPos;
+    private Vector2 targetPos;
     private int direction = 1;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         startPos = transform.position;
-        targetPos = startPos + Vector3.right * moveDistance;
+
+        if (moveHorizontal)
+            targetPos = startPos + Vector2.right * moveDistance;
+        else if (moveVertical)
+            targetPos = startPos + Vector2.up * moveDistance;
+
         previousPos = rb.position;
     }
 
@@ -29,17 +37,48 @@ public class MovingPlatform : MonoBehaviour
 
         previousPos = newPos;
 
-        
+        if (moveHorizontal)
+        {
+            MoveHorizontal();
+            
+            return;
+        }
+
+        if (moveVertical)
+        {
+            MoveVertical();
+            
+            return;
+        }
+        //if (Vector2.Distance(rb.position, targetPos) < 0.01f)
+        //{
+        //    direction *= -1;
+        //    targetPos = (direction == 1) ? startPos + Vector3.right * moveDistance : startPos;
+        //}
+    }
+
+
+    private void MoveHorizontal()
+    {
         if (Vector2.Distance(rb.position, targetPos) < 0.01f)
         {
             direction *= -1;
-            targetPos = (direction == 1) ? startPos + Vector3.right * moveDistance : startPos;
+            targetPos = (direction == 1) ? startPos + Vector2.right * moveDistance : startPos;
         }
+    }
+
+    private void MoveVertical()
+    {
+        if (Vector2.Distance(rb.position, targetPos) < 0.01f)
+        {
+            direction *= -1;
+            targetPos = (direction == 1) ? startPos + Vector2.up * moveDistance : startPos;
+        }       
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Rigidbody2D rbPlayer = collision.rigidbody;
+        Rigidbody2D rbPlayer = collision.gameObject.GetComponent<Rigidbody2D>(); /*collision.rigidbody;*/
         if (rbPlayer != null)
         {
 

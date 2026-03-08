@@ -1,14 +1,14 @@
 using UnityEngine;
+using UnityEngine.WSA;
 
 public class LeverPull : MonoBehaviour
 {
     [SerializeField] GameObject[] effectedObjects;
+    [SerializeField] LeverPull[] otherLevers;
 
-    private SpriteRenderer sr;
+    private SpriteRenderer sr;     
 
-    bool isPulled = false;
-
-    public bool canBePulled = false;
+    public bool canBePulled = true;
 
     private void Start()
     {
@@ -17,35 +17,39 @@ public class LeverPull : MonoBehaviour
 
     public void PullLever()
     {
-        if (isPulled)
-            return;
+        if (!canBePulled)
+            return;        
+
+        ActivateOtherObjects();
+        DisableOtherLevers();
 
         sr.color = Color.red;
         sr.flipX = false;
-        foreach (GameObject obj in effectedObjects)
-        {            
-            Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
-            //rb.gravityScale = 1f;
-            rb.simulated = true;
-        }
-
-        isPulled = true;
+        canBePulled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void ActivateOtherObjects()
     {
-        if (collision.CompareTag("Player"))
+        if (effectedObjects != null)
         {
-            canBePulled = true;
+            foreach (GameObject obj in effectedObjects)
+            {
+                Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
+                rb.simulated = true;
+            }
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    void DisableOtherLevers()
     {
-        if (collision.CompareTag("Player"))
+        if(otherLevers == null)
+            return;
+
+        foreach (LeverPull lever in otherLevers)
         {
-            canBePulled = false;
+            lever.canBePulled = false;
+            lever.sr.color = Color.red;
         }
-    }
+    }    
 
 }

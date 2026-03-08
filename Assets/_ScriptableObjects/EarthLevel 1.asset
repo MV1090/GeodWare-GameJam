@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: EarthLevel 1
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   levelType: Earth
-  levelId: -362925603
-  level: {fileID: 1952346303806024817, guid: 371b19d2c811f214a8357d3fe98a0618, type: 3}
+  levelId: 1396173573
+  level: {fileID: 0}
