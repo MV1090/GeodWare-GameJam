@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WaterLevel 3
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   levelType: Water
-  levelId: 3
-  level: {fileID: 5233514885187638938, guid: 70414d32fc34d41ee97067408d8919a5, type: 3}
+  levelId: 0
+  level: {fileID: 0}

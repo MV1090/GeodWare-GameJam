@@ -1,14 +1,19 @@
 using UnityEngine;
 
-public class AirSprite : MonoBehaviour
+public class AirSprite : BaseSprite
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.tag == "Player")
         {
-            collision.GetComponent<TempPLayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Air);
+            collision.gameObject.GetComponent<TempPLayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Fire);
 
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "MovingPlatform")
+        {
+            gameObject.transform.SetParent(collision.transform);
         }
     }
 }

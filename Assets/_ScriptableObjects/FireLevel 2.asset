@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FireLevel 2
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
   levelType: Fire
-  levelId: 2
-  level: {fileID: 4531084001372190261, guid: 1d67038fcc79e4b099ab5e6f8186d1d8, type: 3}
+  levelId: 0
+  level: {fileID: 0}

@@ -34,7 +34,7 @@ public class TempPLayer : MonoBehaviour
     {
         HandleInput();
         HandleJump();
-        //ChangeSpriteBasedOnState();
+        PullLever();
     }
 
     void FixedUpdate()
@@ -64,40 +64,7 @@ public class TempPLayer : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         }
-    }
-
-    //void ChangeSpriteBasedOnState()
-    //{
-    //    if (Input.GetKeyDown("1")) 
-    //    { 
-    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Earth);
-    //        return; 
-    //    }
-
-    //    if (Input.GetKeyDown("2"))
-    //    {
-    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Air);
-    //        return;
-    //    }
-
-    //    if (Input.GetKeyDown("3"))
-    //    {
-    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Fire);
-    //        return;
-    //    }
-
-    //    if (Input.GetKeyDown("4"))
-    //    {
-    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Water);
-    //        return;
-    //    }
-
-    //    if (Input.GetKeyDown("5"))
-    //    {
-    //        rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Default);
-    //        return;
-    //    }
-    //}
+    }       
 
     void OnDrawGizmosSelected()
     {
@@ -105,6 +72,24 @@ public class TempPLayer : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+    }
+       
+    void PullLever()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 0.5f);
+            foreach (var hit in hits)
+            {
+                LeverPull lever = hit.GetComponent<LeverPull>();
+                if (lever != null && lever.canBePulled)
+                {
+                    lever.PullLever();
+                    break;
+                }
+            }
+        }
     }
 }  
 
