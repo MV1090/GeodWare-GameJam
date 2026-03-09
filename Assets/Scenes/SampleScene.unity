@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80514000a251a8941a7155b21edddb9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  levelCatalog: {fileID: 11400000, guid: 0fc6fee7d9da17542aac9f2439d2b9b5, type: 2}
+  levelCatalog: {fileID: 11400000, guid: 4d087eff2c4b7ef40823bff0d0233274, type: 2}
 --- !u!1 &439719192
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +444,7 @@ GameObject:
   - component: {fileID: 1712361590}
   - component: {fileID: 1712361589}
   - component: {fileID: 1712361594}
+  - component: {fileID: 1712361595}
   - component: {fileID: 1712361592}
   - component: {fileID: 1712361593}
   m_Layer: 0
@@ -545,6 +546,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 439719193}
+  - {fileID: 2028452866}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1712361592
@@ -623,6 +625,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RescuedSprites
   currentState: 4
+--- !u!114 &1712361595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712361588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f890d908b754e1241b103e46c26144e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireProjectile
+  projectileList:
+  - {fileID: 470100562284895075, guid: 811a3ee3be81ff74c9bf030ab800440e, type: 3}
+  - {fileID: 1541427344883726937, guid: c3789b97a3967ac4d8942190f2369dfa, type: 3}
+  - {fileID: 7769540834113284962, guid: 80c0470f312a48b458e78d45e182bba8, type: 3}
+  - {fileID: 5339914320353856440, guid: b366de1e59c5dc74a86191b5cc799475, type: 3}
+  firePoint: {fileID: 2028452866}
+  numberOfProjectiles: 0
+--- !u!1 &2028452865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028452866}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2028452866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028452865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.68, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1712361591}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

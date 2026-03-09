@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class TempPLayer : MonoBehaviour
+public class TempPlayer : MonoBehaviour
 {
 
-    public static TempPLayer instance;
+    public static TempPlayer instance;
 
     public RescuedSprites rescuedSprites;
+    FireProjectile fireProjectile;
 
     [Header("Movement")]
     public float moveSpeed = 8f;
@@ -28,6 +29,7 @@ public class TempPLayer : MonoBehaviour
         instance = this;
         rb = GetComponent<Rigidbody2D>();
         rescuedSprites = GetComponent<RescuedSprites>();
+        fireProjectile = GetComponent<FireProjectile>();
     }
 
     void Update()
@@ -35,11 +37,23 @@ public class TempPLayer : MonoBehaviour
         HandleInput();
         HandleJump();
         PullLever();
+        Fire();
     }
 
     void FixedUpdate()
     {
         Move();
+    }
+
+    void Fire() 
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {            
+            if (fireProjectile != null)
+            {
+                fireProjectile.Fire();
+            }
+        }
     }
 
     void HandleInput()
@@ -76,7 +90,7 @@ public class TempPLayer : MonoBehaviour
        
     void PullLever()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 0.5f);
             foreach (var hit in hits)

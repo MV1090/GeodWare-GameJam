@@ -6,7 +6,7 @@ public class LevelLoadDecider : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            switch (TempPLayer.instance.rescuedSprites.GetCurrentState())
+            switch (TempPlayer.instance.rescuedSprites.GetCurrentState())
             {
                 case RescuedSprites.ElementSprite.Earth:
                     LevelManager.instance.LoadNextLevelByType("Earth");

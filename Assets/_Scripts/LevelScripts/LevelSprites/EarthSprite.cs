@@ -6,7 +6,7 @@ public class EarthSprite : BaseSprite
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<TempPLayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Earth);
+            collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Earth);
 
             Destroy(gameObject);
         }
