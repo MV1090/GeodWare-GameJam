@@ -51,7 +51,8 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"No incomplete levels of type {levelType}");
+            Debug.LogWarning($"No incomplete levels of type {levelType}, Loading Final Level");
+            LoadLevel(levelCatalog.allLevels.Last());
         }
     }
 
