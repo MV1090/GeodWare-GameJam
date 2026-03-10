@@ -13,26 +13,8 @@ public class WaterSpriteAction : MonoBehaviour
 
             StartCoroutine(drainWater.Drain()); 
             
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, .5f);
         }
     }
-
-    //IEnumerator DrainWater(Collider2D obj)
-    //{
-    //    Vector2 startPos = obj.transform.position;
-    //    Vector2 targetPos = startPos + Vector2.down * 5f;
-
-    //    float duration = 2f;
-    //    float time = 0f;
-
-    //    while (time < duration)
-    //    {
-    //        obj.transform.position = Vector2.Lerp(startPos, targetPos, time / duration);
-    //        time += Time.deltaTime;
-    //        yield return null;
-    //    }
-    //    Destroy(gameObject);
-    //    obj.transform.position = targetPos;        
-    //    Destroy(obj.gameObject);
-    //}
+        
 }
