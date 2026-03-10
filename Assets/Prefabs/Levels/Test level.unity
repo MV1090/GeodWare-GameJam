@@ -218,6 +218,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+  lastFramePosition: {x: 0, y: 0, z: 0}
+  rigidBody: {fileID: 0}
+  rigidBody2D: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!114 &787245785
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 353a9c870c318f74fa5fdcd475129bae
 timeCreated: 1432530253
+<<<<<<< Updated upstream
 licenseType: Store
+=======
+licenseType: Free
+>>>>>>> Stashed changes
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
@@ -10,6 +14,7 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -17,3 +22,5 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/src/Editor/SettingsEditor.cs
   uploadId: 847624
+=======
+>>>>>>> Stashed changes

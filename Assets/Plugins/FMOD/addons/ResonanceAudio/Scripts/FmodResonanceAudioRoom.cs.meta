@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 6b0c5e63920ee4f55b7ec5248525af4b
 timeCreated: 1511395157
+<<<<<<< Updated upstream
 licenseType: Store
+=======
+licenseType: Pro
+>>>>>>> Stashed changes
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
@@ -10,6 +14,7 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -17,3 +22,5 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/addons/ResonanceAudio/Scripts/FmodResonanceAudioRoom.cs
   uploadId: 847624
+=======
+>>>>>>> Stashed changes

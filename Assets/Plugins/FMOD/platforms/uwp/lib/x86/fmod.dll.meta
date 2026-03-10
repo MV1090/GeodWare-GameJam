@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 39f9a761a2a032045a853a069db31081
 timeCreated: 1457408139
+<<<<<<< Updated upstream
 licenseType: Store
+=======
+licenseType: Free
+>>>>>>> Stashed changes
 PluginImporter:
   serializedVersion: 1
   iconMap: {}
@@ -56,6 +60,7 @@ PluginImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -63,3 +68,5 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/platforms/uwp/lib/x86/fmod.dll
   uploadId: 847624
+=======
+>>>>>>> Stashed changes

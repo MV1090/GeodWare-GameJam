@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 21e7a3d41a926364a8b9a6704ebe80d8
 timeCreated: 1433917421
+<<<<<<< Updated upstream
 licenseType: Store
+=======
+licenseType: Free
+>>>>>>> Stashed changes
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -53,6 +57,7 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -60,3 +65,5 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/images/LevelMeter.png
   uploadId: 847624
+=======
+>>>>>>> Stashed changes

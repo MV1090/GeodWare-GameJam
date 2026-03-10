@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 369c18de2bb8eba458fea38b9c7dc289
 AssetOrigin:
   serializedVersion: 1
@@ -7,3 +8,6 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/addons/Haptics/Scripts/FMODHaptics.cs
   uploadId: 847624
+=======
+guid: 369c18de2bb8eba458fea38b9c7dc289
+>>>>>>> Stashed changes
