@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 162671735891983301}
   - component: {fileID: 767067279896541121}
   - component: {fileID: 1949728531235389396}
+  - component: {fileID: 8149660857630020172}
   m_Layer: 0
   m_Name: FireProjectile
   m_TagString: Untagged
@@ -155,3 +156,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8149660857630020172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769540834113284962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4019a463ea4a1d4b874d164b8be779e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireSpriteAction
+  fireFlame: {fileID: 7422513082841712209, guid: a84ee78ef6320a94e9f3cecea6b9caf9, type: 3}

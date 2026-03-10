@@ -16,4 +16,5 @@ public class EarthSprite : BaseSprite
             gameObject.transform.SetParent(collision.transform);
         }
     }
+        
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Lever
   - MovingPlatform
+  - Spikes
+  - Crate
   layers:
   - Default
   - TransparentFX

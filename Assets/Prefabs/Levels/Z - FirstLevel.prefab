@@ -37982,10 +37982,6 @@ PrefabInstance:
       propertyPath: 'effectedObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 4203997062024429208}
-    - target: {fileID: 3540373622650090116, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
-      propertyPath: 'effectedObjects.Array.data[1]'
-      value: 
-      objectReference: {fileID: 4203997062024429208}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
