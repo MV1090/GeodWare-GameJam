@@ -8,5 +8,11 @@ public class BaseSprite : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if(collision.gameObject.tag == "Water")
+        {
+            Destroy(gameObject, 1f);
+        }
+
     }
 }

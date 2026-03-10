@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1504017331628795299}
   - component: {fileID: 7389248097546906931}
   - component: {fileID: 6858160153482259445}
+  - component: {fileID: -7392199825189685816}
   m_Layer: 0
   m_Name: WaterProjectile
   m_TagString: Untagged
@@ -155,3 +156,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7392199825189685816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339914320353856440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649c399364bed1840879fe373a698e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaterSpriteAction

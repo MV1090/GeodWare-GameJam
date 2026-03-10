@@ -38,7 +38,7 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadNextLevelByType(string levelType)
-    {
+    {      
         Level_Scriptable levelToLoad = levelCatalog.allLevels
             .Where(level => level.levelType == levelType && !loadedLevels.Contains(level))
             .OrderBy(level => level.levelId)

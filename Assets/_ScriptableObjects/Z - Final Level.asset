@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35cbb165efae2544e9b0ffde7955727d, type: 3}
   m_Name: Z - Final Level
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelType: 
-  levelId: 0
+  levelType: Default
+  levelId: -30239394
   level: {fileID: 1952346303806024817, guid: d956d8f2e2a9d104a82494ee1958e8d4, type: 3}
