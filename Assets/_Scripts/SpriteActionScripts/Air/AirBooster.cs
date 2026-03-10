@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class AirBooster : MonoBehaviour
+{
+    [SerializeField] private float boostForce = 20f;
+    
+    void Start()
+    {
+        Destroy(gameObject, 5f);
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Rigidbody2D playerRb = collision.GetComponent<Rigidbody2D>();
+
+            float turbulence = Random.Range(-1f, 1f);
+            playerRb.linearVelocity = new Vector2(playerRb.linearVelocity.x, boostForce);
+            playerRb.gravityScale = 0.3f;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Rigidbody2D playerRb = collision.GetComponent<Rigidbody2D>();
+           playerRb.gravityScale = 3f;
+        }
+    }
+}

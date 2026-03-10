@@ -6,7 +6,7 @@ public class FireSprite : BaseSprite
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<TempPLayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Fire);
+            collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Fire);
 
             Destroy(gameObject);
         }

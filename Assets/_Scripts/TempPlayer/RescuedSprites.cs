@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class RescuedSprites : MonoBehaviour
@@ -13,6 +14,8 @@ public class RescuedSprites : MonoBehaviour
 
     [SerializeField] private ElementSprite currentState = ElementSprite.Default;
 
+    public event Action<ElementSprite> OnStateChanged;
+
     public ElementSprite GetCurrentState()
     {
         return currentState;
@@ -21,5 +24,7 @@ public class RescuedSprites : MonoBehaviour
     public void SetCurrentState(ElementSprite newState)
     {
         currentState = newState;
+
+        OnStateChanged?.Invoke(currentState);
     }
 }
