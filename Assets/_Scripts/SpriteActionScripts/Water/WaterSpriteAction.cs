@@ -10,6 +10,7 @@ public class WaterSpriteAction : BaseSpriteAction
         if (collision.gameObject.tag == "Water")
         {
             DrainWater drainWater = collision.gameObject.GetComponent<DrainWater>();
+            AudioManager.Instance.PlayWaterDrop(transform.position);
 
             StartCoroutine(drainWater.Drain()); 
             

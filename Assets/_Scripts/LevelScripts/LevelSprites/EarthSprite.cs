@@ -6,8 +6,11 @@ public class EarthSprite : BaseSprite
     {
         if (collision.gameObject.tag == "Player")
         {
-            if(!GameManager.instance.levelLockedIn)
-            collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Earth);
+            // 🔊 Play pickup sound at sprite location
+            AudioManager.Instance.PlaySpriteCollect(transform.position);
+
+            if (!GameManager.instance.levelLockedIn)
+                collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Earth);
 
             gameObject.SetActive(false);
         }
@@ -17,5 +20,4 @@ public class EarthSprite : BaseSprite
             gameObject.transform.SetParent(collision.transform);
         }
     }
-        
 }

@@ -229,6 +229,48 @@ MonoBehaviour:
       Data3: 924341136
       Data4: -469513646
     Path: event:/SFX/Environment/Lever
+  spritesFallEvent:
+    Guid:
+      Data1: -1597364025
+      Data2: 1271745539
+      Data3: 937315460
+      Data4: 531407640
+    Path: event:/SFX/Sprite/Sprite_Dies
+  jumpEvent:
+    Guid:
+      Data1: -520134331
+      Data2: 1259846319
+      Data3: 2097637257
+      Data4: -669694912
+    Path: event:/SFX/Player/Player_Jump
+  landingEvent:
+    Guid:
+      Data1: -1986069392
+      Data2: 1328539865
+      Data3: -738054016
+      Data4: 364062027
+    Path: event:/SFX/Player/Player_Land
+  spriteCollectEvent:
+    Guid:
+      Data1: 1995767816
+      Data2: 1155710561
+      Data3: -336532060
+      Data4: -1118969771
+    Path: event:/SFX/Sprite/Sprite Collected
+  waterDropEvent:
+    Guid:
+      Data1: 2119793283
+      Data2: 1253226219
+      Data3: -2137338437
+      Data4: 1757342292
+    Path: event:/SFX/Sprite/Sprite_Used_Water
+  footstepLoopEvent:
+    Guid:
+      Data1: -469500596
+      Data2: 1089239314
+      Data3: -537580111
+      Data4: 587892748
+    Path: event:/SFX/Player/Player_Walk
 --- !u!1 &254014946
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
   nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 1712361588}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +634,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  isDead: 0
 --- !u!212 &1712361590
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -779,6 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e09002e2ce96fa4fb8639af050feedc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
+  isDead: 0
 --- !u!1 &2028452865
 GameObject:
   m_ObjectHideFlags: 0

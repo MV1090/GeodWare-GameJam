@@ -25,6 +25,7 @@ public class LeverPull : MonoBehaviour, IResettable
         if (!canBePulled)
             return;        
            AudioManager.Instance.PlayLeverPull(); 
+           AudioManager.Instance.PlaySpritesFall();
 
         ActivateOtherObjects();
         DisableOtherLevers();

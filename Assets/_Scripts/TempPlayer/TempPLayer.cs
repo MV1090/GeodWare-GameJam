@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class TempPlayer : MonoBehaviour
 {
-
     public static TempPlayer instance;
 
     public RescuedSprites rescuedSprites;
@@ -22,13 +21,16 @@ public class TempPlayer : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private bool isGrounded;
+    private bool wasGrounded;
 
     public bool isDead;
 
     private float moveInput;
 
+    private bool footstepsActive = false;
+
     void Awake()
-    {        
+    {
         instance = this;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -45,6 +47,7 @@ public class TempPlayer : MonoBehaviour
     {
         HandleInput();
         HandleJump();
+        HandleFootsteps();
         PullLever();
         Fire();
         ResetPlayer();
@@ -55,10 +58,10 @@ public class TempPlayer : MonoBehaviour
         Move();
     }
 
-    void Fire() 
+    void Fire()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
-        {            
+        {
             if (fireProjectile != null)
             {
                 fireProjectile.Fire();
@@ -69,7 +72,9 @@ public class TempPlayer : MonoBehaviour
     void HandleInput()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
-        if(moveInput !=0) sr.flipX = moveInput < 0;
+
+        if (moveInput != 0)
+            sr.flipX = moveInput < 0;
     }
 
     void Move()
@@ -77,19 +82,50 @@ public class TempPlayer : MonoBehaviour
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
-    void HandleJump()
-    {
-        isGrounded = Physics2D.OverlapCircle(
-            groundCheck.position,
-            groundCheckRadius,
-            groundLayer
-        );
+  void HandleJump()
+{
+    wasGrounded = isGrounded;
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+    isGrounded = Physics2D.OverlapCircle(
+        groundCheck.position,
+        groundCheckRadius,
+        groundLayer
+    );
+
+    // Detect landing
+    if (!wasGrounded && isGrounded)
+    {
+        AudioManager.Instance.PlayLanding(transform.position);
+    }
+
+    if (Input.GetButtonDown("Jump") && isGrounded)
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        AudioManager.Instance.PlayJump();
+    }
+}
+
+    void HandleFootsteps()
+    {
+        bool isTryingToMove = Mathf.Abs(moveInput) > 0.1f;
+
+        if (isGrounded && isTryingToMove)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            if (!footstepsActive)
+            {
+                AudioManager.Instance.StartFootsteps(gameObject);
+                footstepsActive = true;
+            }
         }
-    }       
+        else
+        {
+            if (footstepsActive)
+            {
+                AudioManager.Instance.StopFootsteps();
+                footstepsActive = false;
+            }
+        }
+    }
 
     void OnDrawGizmosSelected()
     {
@@ -98,15 +134,17 @@ public class TempPlayer : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
     }
-       
+
     void PullLever()
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 0.5f);
+
             foreach (var hit in hits)
             {
                 LeverPull lever = hit.GetComponent<LeverPull>();
+
                 if (lever != null)
                 {
                     lever.PullLever();
@@ -120,12 +158,29 @@ public class TempPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) || isDead == true)
         {
+            AudioManager.Instance.StopFootsteps();
+            footstepsActive = false;
+
             transform.position = GameManager.instance.GetCurrentSpawnPoint().transform.position;
-            rescuedSprites.SetCurrentState(GameManager.instance.GetCurrentSpawnPoint().savedElementState);
+
+            rescuedSprites.SetCurrentState(
+                GameManager.instance.GetCurrentSpawnPoint().savedElementState
+            );
+
             GameManager.instance.GetCurrentSpawnPoint().levelReset.ResetObjects();
             GameManager.instance.ClearNextLevel();
+
             isDead = false;
         }
     }
-}  
 
+    private void OnDisable()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopFootsteps();
+        }
+
+        footstepsActive = false;
+    }
+}
