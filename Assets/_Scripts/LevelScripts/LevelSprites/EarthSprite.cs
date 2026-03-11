@@ -6,6 +6,7 @@ public class EarthSprite : BaseSprite
     {
         if (collision.gameObject.tag == "Player")
         {
+            if(!GameManager.instance.levelLockedIn)
             collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Earth);
 
             gameObject.SetActive(false);

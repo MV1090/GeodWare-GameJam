@@ -6,7 +6,8 @@ public class WaterSprite : BaseSprite
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Water);
+            if (!GameManager.instance.levelLockedIn)
+                collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Water);
 
             gameObject.SetActive(false);
         }
