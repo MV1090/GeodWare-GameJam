@@ -6,7 +6,8 @@ public class FireSprite : BaseSprite
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Fire);
+            if (!GameManager.instance.levelLockedIn)
+                collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Fire);
 
             gameObject.SetActive(false);
         }

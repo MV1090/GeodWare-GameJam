@@ -5,34 +5,25 @@ public class SpawnPoint : MonoBehaviour
 {
     public int spawnPointID;
 
-    public LevelReset levelReset;   
+    public LevelReset levelReset;
 
-
+    public RescuedSprites.ElementSprite savedElementState;
     
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public IEnumerator WaitForLoad()
     {
-        if (collision.CompareTag("Player"))
-        {
-            spawnPointID = GameManager.instance.GetSpawnPointID() + 1;
+        spawnPointID = GameManager.instance.GetSpawnPointID() + 1;
 
-            if (spawnPointID > GameManager.instance.GetSpawnPointID())
-                GameManager.instance.SetCurrentSpawnPoint(this);
+        if (spawnPointID > GameManager.instance.GetSpawnPointID())
+            GameManager.instance.SetCurrentSpawnPoint(this);
 
-            StartCoroutine(WaitForLoad());          
-            
-        }
-    }
-
-    IEnumerator WaitForLoad()
-    {
         yield return new WaitForSeconds(0.05f);
 
         foreach (GameObject resettable in levelReset.resettableObjects)
         {
             if (resettable.TryGetComponent(out IResettable resettableComponent))
             {
-                resettableComponent.SaveState();                
+                resettableComponent.SaveState();
+                savedElementState = GameManager.instance.GetNextLevelElement();
             }
         }
     }

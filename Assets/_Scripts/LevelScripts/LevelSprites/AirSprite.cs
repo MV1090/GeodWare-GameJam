@@ -6,7 +6,8 @@ public class AirSprite : BaseSprite
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Air);
+            if (!GameManager.instance.levelLockedIn)
+                collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Air);
 
             gameObject.SetActive(false);
         }

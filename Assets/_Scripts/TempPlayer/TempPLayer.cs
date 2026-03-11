@@ -23,6 +23,8 @@ public class TempPlayer : MonoBehaviour
     private SpriteRenderer sr;
     private bool isGrounded;
 
+    public bool isDead;
+
     private float moveInput;
 
     void Awake()
@@ -32,6 +34,11 @@ public class TempPlayer : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         rescuedSprites = GetComponent<RescuedSprites>();
         fireProjectile = GetComponent<FireProjectile>();
+    }
+
+    private void Start()
+    {
+        GameManager.instance.RegisterPlayer(rescuedSprites);
     }
 
     void Update()
@@ -111,11 +118,13 @@ public class TempPlayer : MonoBehaviour
 
     public void ResetPlayer()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || isDead == true)
         {
             transform.position = GameManager.instance.GetCurrentSpawnPoint().transform.position;
-            fireProjectile.SetCurrentProjectile(RescuedSprites.ElementSprite.Default);
+            rescuedSprites.SetCurrentState(GameManager.instance.GetCurrentSpawnPoint().savedElementState);
             GameManager.instance.GetCurrentSpawnPoint().levelReset.ResetObjects();
+            GameManager.instance.ClearNextLevel();
+            isDead = false;
         }
     }
 }  

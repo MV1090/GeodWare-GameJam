@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 
     SpawnPoint currentSpawnPoint;
 
+    public RescuedSprites.ElementSprite pendingLevelElement = RescuedSprites.ElementSprite.Default;
+
+    public bool levelLockedIn;
+
     private void Awake()
     {
         if (instance == null)
@@ -17,6 +21,34 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void RegisterPlayer(RescuedSprites rescuedSprites)
+    {
+        rescuedSprites.OnStateChanged += SetNextLevelElement;
+    }    
+
+    public void SetNextLevelElement(RescuedSprites.ElementSprite element)
+    {
+        if (levelLockedIn) return;
+
+        if (element == RescuedSprites.ElementSprite.Default) return;
+
+        pendingLevelElement = element;
+        levelLockedIn = true;
+
+        Debug.Log("Next level locked to: " + element);
+    }
+
+    public RescuedSprites.ElementSprite GetNextLevelElement()
+    {
+        return pendingLevelElement;
+    }
+
+    public void ClearNextLevel()
+    {
+        pendingLevelElement = RescuedSprites.ElementSprite.Default;
+        levelLockedIn = false;
     }
 
     public void SetCurrentSpawnPoint(SpawnPoint spawnPoint)
