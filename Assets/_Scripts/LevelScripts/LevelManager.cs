@@ -81,6 +81,7 @@ public class LevelManager : MonoBehaviour
 
         previousLevel = nextLevel;
 
+        GameManager.instance.levelLockedIn = false;
     }
 
     
