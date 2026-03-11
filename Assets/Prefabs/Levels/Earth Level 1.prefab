@@ -221,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5617796391131014104}
   - component: {fileID: 2420956114800587943}
+  - component: {fileID: 588642277446946705}
   m_Layer: 0
   m_Name: Earth Level 1
   m_TagString: Untagged
@@ -267,6 +268,22 @@ MonoBehaviour:
   entryPoint: {fileID: 2660201619523799131}
   exitPoint: {fileID: 4052783307154835453}
   spawnPoint: {fileID: 775759377373896686}
+--- !u!114 &588642277446946705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952346303806024817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6b1ec449594224fb6370bf098aa1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelReset
+  resettableObjects:
+  - {fileID: 5195624920833969694}
+  - {fileID: 3427676227089657647}
+  - {fileID: 3163482283051086752}
 --- !u!1 &3330752712820843841
 GameObject:
   m_ObjectHideFlags: 0
@@ -25365,6 +25382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775759377373896686}
   - component: {fileID: 5093577649703892670}
+  - component: {fileID: 3319158368185824365}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -25433,6 +25451,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &3319158368185824365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399361635004072574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e944eb79aa3370c4d925d22bb4ef1171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPoint
+  spawnPointID: 0
+  levelReset: {fileID: 588642277446946705}
 --- !u!1 &7088490483451510298
 GameObject:
   m_ObjectHideFlags: 0
@@ -26303,6 +26335,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
+--- !u!1 &5195624920833969694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1189366777063288261, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
+  m_PrefabInstance: {fileID: 6384955963769349083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6709230344650283824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 396337577128179947, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}

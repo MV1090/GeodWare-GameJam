@@ -8,7 +8,7 @@ public class EarthSprite : BaseSprite
         {
             collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Earth);
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
         if (collision.gameObject.tag == "MovingPlatform")

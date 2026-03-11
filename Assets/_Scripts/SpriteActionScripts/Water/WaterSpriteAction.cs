@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class WaterSpriteAction : MonoBehaviour
+public class WaterSpriteAction : BaseSpriteAction
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {

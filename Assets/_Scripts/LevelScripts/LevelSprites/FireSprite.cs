@@ -8,7 +8,7 @@ public class FireSprite : BaseSprite
         {
             collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Fire);
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
         if (collision.gameObject.tag == "MovingPlatform")

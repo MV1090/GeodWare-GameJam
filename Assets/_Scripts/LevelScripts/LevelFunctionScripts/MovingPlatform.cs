@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : MonoBehaviour, IResettable
 {
     public float moveDistance = 5f;
     public float moveSpeed = 2f;
@@ -14,6 +14,8 @@ public class MovingPlatform : MonoBehaviour
     private Vector2 startPos;
     private Vector2 targetPos;
     private int direction = 1;
+
+    private bool isMoving;
 
     void Start()
     {
@@ -50,13 +52,8 @@ public class MovingPlatform : MonoBehaviour
             
             return;
         }
-        //if (Vector2.Distance(rb.position, targetPos) < 0.01f)
-        //{
-        //    direction *= -1;
-        //    targetPos = (direction == 1) ? startPos + Vector3.right * moveDistance : startPos;
-        //}
+        
     }
-
 
     private void MoveHorizontal()
     {
@@ -78,7 +75,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        Rigidbody2D rbPlayer = collision.gameObject.GetComponent<Rigidbody2D>(); /*collision.rigidbody;*/
+        Rigidbody2D rbPlayer = collision.gameObject.GetComponent<Rigidbody2D>();
         if (rbPlayer != null)
         {
 
@@ -90,5 +87,17 @@ public class MovingPlatform : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SaveState()
+    {
+        startPos = transform.position;
+        isMoving = rb.simulated;
+    }
+
+    public void ResetState()
+    {
+        transform.position = startPos;
+        rb.simulated = isMoving;
     }
 }

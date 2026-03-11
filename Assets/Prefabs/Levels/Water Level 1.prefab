@@ -359,6 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8682cace1d2224eb4a04abd75af9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FloatingPlatform
+  distance: 4
 --- !u!1 &1690229924434174257
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5617796391131014104}
   - component: {fileID: 1224392433878668453}
+  - component: {fileID: 2216735727087592649}
   m_Layer: 0
   m_Name: Water Level 1
   m_TagString: Untagged
@@ -449,6 +451,30 @@ MonoBehaviour:
   entryPoint: {fileID: 2660201619523799131}
   exitPoint: {fileID: 4052783307154835453}
   spawnPoint: {fileID: 775759377373896686}
+--- !u!114 &2216735727087592649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952346303806024817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6b1ec449594224fb6370bf098aa1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelReset
+  resettableObjects:
+  - {fileID: 5740034759242446679}
+  - {fileID: 3495785115846312217}
+  - {fileID: 2338026734029282250}
+  - {fileID: 1490632221200139028}
+  - {fileID: 780030089650979678}
+  - {fileID: 6100457801315833084}
+  - {fileID: 8655379470147685980}
+  - {fileID: 1175143594157377201}
+  - {fileID: 6629642037311554857}
+  - {fileID: 5993061901398722708}
+  - {fileID: 5927127873086494454}
 --- !u!1 &3330752712820843841
 GameObject:
   m_ObjectHideFlags: 0
@@ -25662,6 +25688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrainWater
   floatingPlatform: {fileID: 8984337202596073147}
+  distance: 5
 --- !u!1 &5400553590780438947
 GameObject:
   m_ObjectHideFlags: 0
@@ -26489,6 +26516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrainWater
   floatingPlatform: {fileID: 3313741241125226162}
+  distance: 5
 --- !u!1 &6399361635004072574
 GameObject:
   m_ObjectHideFlags: 0
@@ -26499,6 +26527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775759377373896686}
   - component: {fileID: 5093577649703892670}
+  - component: {fileID: 3243914859768439645}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -26567,6 +26596,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &3243914859768439645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399361635004072574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e944eb79aa3370c4d925d22bb4ef1171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPoint
+  spawnPointID: 0
+  levelReset: {fileID: 2216735727087592649}
 --- !u!1 &6629642037311554857
 GameObject:
   m_ObjectHideFlags: 0
@@ -26746,6 +26789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8682cace1d2224eb4a04abd75af9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FloatingPlatform
+  distance: 4
 --- !u!1 &7088490483451510298
 GameObject:
   m_ObjectHideFlags: 0
@@ -28415,12 +28459,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 396337577128179947, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
   m_PrefabInstance: {fileID: 4809872635185937203}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5927127873086494454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1189366777063288261, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
+  m_PrefabInstance: {fileID: 4809872635185937203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8350226354886248887 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3540373622650090116, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
   m_PrefabInstance: {fileID: 4809872635185937203}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5927127873086494454}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7e26e559b55a9043915abc71ac04316, type: 3}
@@ -28524,12 +28573,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 396337577128179947, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
   m_PrefabInstance: {fileID: 4875947882023118161}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5993061901398722708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1189366777063288261, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
+  m_PrefabInstance: {fileID: 4875947882023118161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8253752102631167957 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3540373622650090116, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
   m_PrefabInstance: {fileID: 4875947882023118161}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 5993061901398722708}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7e26e559b55a9043915abc71ac04316, type: 3}
@@ -28607,6 +28661,11 @@ PrefabInstance:
 --- !u!4 &4731108552204075474 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 396337577128179947, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
+  m_PrefabInstance: {fileID: 4911268595649149241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6100457801315833084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1189366777063288261, guid: d19928dd8e9b55b45afc1136ac6fb184, type: 3}
   m_PrefabInstance: {fileID: 4911268595649149241}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5208609863699188219

@@ -155,7 +155,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &-5469622806273042572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,4 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5096426153de9444eb7db1ee5882e303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AirSpriteAction
+  xVel: 0
+  yVel: 0
+  lifeTime: 2
   booster: {fileID: 66313100791205236, guid: b0626c509fa847242bdab388cc37ac0c, type: 3}

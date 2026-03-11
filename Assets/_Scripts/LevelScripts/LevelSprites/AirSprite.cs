@@ -8,7 +8,7 @@ public class AirSprite : BaseSprite
         {
             collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Air);
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
         if (collision.gameObject.tag == "MovingPlatform")

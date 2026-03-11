@@ -8,8 +8,8 @@ public class DrainWater : MonoBehaviour
  
     public IEnumerator Drain()
     {
-
-        StartCoroutine(floatingPlatform.FloatUp());
+        if (floatingPlatform != null)
+            StartCoroutine(floatingPlatform.FloatUp());
 
         Vector2 startPos = transform.position;
         Vector2 targetPos = startPos + Vector2.down * distance;
@@ -25,6 +25,6 @@ public class DrainWater : MonoBehaviour
         }
         
         transform.position = targetPos;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
