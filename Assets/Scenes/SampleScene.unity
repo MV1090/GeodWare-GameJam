@@ -193,6 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8986f493ff54d04e96883d80f291b5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  pendingLevelElement: 0
+  levelLockedIn: 0
 --- !u!4 &254014948
 Transform:
   m_ObjectHideFlags: 0
@@ -487,6 +489,7 @@ GameObject:
   - component: {fileID: 1712361591}
   - component: {fileID: 1712361590}
   - component: {fileID: 1712361589}
+  - component: {fileID: 1712361596}
   - component: {fileID: 1712361594}
   - component: {fileID: 1712361595}
   - component: {fileID: 1712361592}
@@ -693,6 +696,18 @@ MonoBehaviour:
   currentProjectile: {fileID: 0}
   xVelocity: 7
   yVelocity: 7
+--- !u!114 &1712361596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712361588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e09002e2ce96fa4fb8639af050feedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
 --- !u!1 &2028452865
 GameObject:
   m_ObjectHideFlags: 0

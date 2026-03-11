@@ -9,6 +9,7 @@ TagManager:
   - Spikes
   - Crate
   - Water
+  - DeathZone
   layers:
   - Default
   - TransparentFX
