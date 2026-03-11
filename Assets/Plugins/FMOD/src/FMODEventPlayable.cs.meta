@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: 987a467495df9d942b56b1b51381d095
 timeCreated: 1523230466
+<<<<<<< Updated upstream
 licenseType: Store
+=======
+licenseType: Free
+>>>>>>> Stashed changes
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -11,6 +15,7 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -18,3 +23,5 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/src/FMODEventPlayable.cs
   uploadId: 847624
+=======
+>>>>>>> Stashed changes

@@ -9,6 +9,7 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -16,3 +17,5 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/platforms/tvos/src/PlatformAppleTV.cs
   uploadId: 847624
+=======
+>>>>>>> Stashed changes

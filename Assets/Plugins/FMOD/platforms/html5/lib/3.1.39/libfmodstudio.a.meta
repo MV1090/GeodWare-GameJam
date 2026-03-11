@@ -30,6 +30,7 @@ PluginImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -37,3 +38,5 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/platforms/html5/lib/3.1.39/libfmodstudio.a
   uploadId: 847624
+=======
+>>>>>>> Stashed changes

@@ -22,6 +22,7 @@ PluginImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -29,3 +30,5 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/platforms/android/lib/x86_64/libresonanceaudio.so
   uploadId: 847624
+=======
+>>>>>>> Stashed changes

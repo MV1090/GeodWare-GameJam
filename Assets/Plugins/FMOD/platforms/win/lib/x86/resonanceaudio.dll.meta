@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: b2c11f1e03736f748bd861d7bf4f8952
 timeCreated: 1511469552
+<<<<<<< Updated upstream
 licenseType: Store
+=======
+licenseType: Free
+>>>>>>> Stashed changes
 PluginImporter:
   serializedVersion: 1
   iconMap: {}
@@ -53,6 +57,7 @@ PluginImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -60,3 +65,5 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/platforms/win/lib/x86/resonanceaudio.dll
   uploadId: 847624
+=======
+>>>>>>> Stashed changes

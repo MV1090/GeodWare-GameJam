@@ -64,6 +64,7 @@ PluginImporter:
         FrameworkDependencies: 
   userData: 
   assetBundleName: 
+<<<<<<< Updated upstream
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
@@ -72,3 +73,6 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/platforms/linux/lib/x86_64/libfmod_haptics.so
   uploadId: 847624
+=======
+  assetBundleVariant: 
+>>>>>>> Stashed changes

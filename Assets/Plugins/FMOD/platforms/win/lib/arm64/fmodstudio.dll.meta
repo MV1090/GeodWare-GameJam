@@ -12,7 +12,11 @@ PluginImporter:
   validateReferences: 1
   platformData:
   - first:
+<<<<<<< Updated upstream
       : 
+=======
+      :
+>>>>>>> Stashed changes
     second:
       enabled: 0
       settings: {}
@@ -60,6 +64,7 @@ PluginImporter:
         CPU: ARM64
   userData: 
   assetBundleName: 
+<<<<<<< Updated upstream
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
@@ -68,3 +73,6 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/platforms/win/lib/arm64/fmodstudio.dll
   uploadId: 847624
+=======
+  assetBundleVariant: 
+>>>>>>> Stashed changes
