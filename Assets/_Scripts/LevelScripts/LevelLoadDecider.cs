@@ -3,10 +3,10 @@ using UnityEngine;
 public class LevelLoadDecider : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {        
         if (collision.gameObject.CompareTag("Player"))
         {
-            switch (TempPlayer.instance.rescuedSprites.GetCurrentState())
+            switch (/*TempPlayer.instance.rescuedSprites.GetCurrentState()*/ GameManager.instance.pendingLevelElement)
             {
                 case RescuedSprites.ElementSprite.Earth:
                     LevelManager.instance.LoadNextLevelByType("Earth");

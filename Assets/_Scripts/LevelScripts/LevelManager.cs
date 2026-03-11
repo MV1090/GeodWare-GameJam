@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
             Debug.LogError("Level Catalog is not assigned or contains no levels. Please assign a Level Catalog with levels.");
             return;
         }
-
+                        
         LoadLevel(levelCatalog.allLevels[0]);
         loadedLevels.Add(levelCatalog.allLevels[0]);
         TempPlayer.instance.transform.position = previousLevel.spawnPoint.position;
@@ -43,6 +43,8 @@ public class LevelManager : MonoBehaviour
             .Where(level => level.levelType == levelType && !loadedLevels.Contains(level))
             .OrderBy(level => level.levelId)
             .FirstOrDefault();
+
+        
 
         if (levelToLoad != null)
         {
@@ -62,17 +64,26 @@ public class LevelManager : MonoBehaviour
 
         LevelSegments nextLevel = nextLevelObj.GetComponent<LevelSegments>();
 
+        SpawnPoint sp = nextLevel.spawnPoint.gameObject.GetComponent<SpawnPoint>();
+
         if (previousLevel == null)
         {
-            previousLevel = nextLevel;
+            previousLevel = nextLevel;            
+
+            StartCoroutine(sp.WaitForLoad());
+
             return;
-        }
+        }        
+
+        StartCoroutine(sp.WaitForLoad());
 
         AlignLevels(previousLevel, nextLevel);
 
         previousLevel = nextLevel;
 
     }
+
+    
 
     private void RandomizeLevels()
     {

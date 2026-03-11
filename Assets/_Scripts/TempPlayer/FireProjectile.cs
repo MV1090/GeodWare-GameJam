@@ -36,7 +36,7 @@ public class FireProjectile : MonoBehaviour
 
         Debug.Log($"Setting current projectile for element: {element}");
         numberOfProjectiles = 1;
-        currentProjectile = projectileList[(int)element];
+        currentProjectile = projectileList[(int)element - 1];
     }
 
     public GameObject GetCurrentProjectile()
@@ -75,4 +75,6 @@ public class FireProjectile : MonoBehaviour
 
         TempPlayer.instance.rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Default);
     }
+
+  
 }

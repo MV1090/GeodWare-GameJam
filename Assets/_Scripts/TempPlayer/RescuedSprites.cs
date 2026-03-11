@@ -5,11 +5,11 @@ public class RescuedSprites : MonoBehaviour
 {   
     public enum ElementSprite
     {
+        Default,
         Earth,
         Air,
         Fire,
-        Water,
-        Default
+        Water        
     }
 
     [SerializeField] private ElementSprite currentState = ElementSprite.Default;

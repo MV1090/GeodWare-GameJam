@@ -34,6 +34,11 @@ public class TempPlayer : MonoBehaviour
         fireProjectile = GetComponent<FireProjectile>();
     }
 
+    private void Start()
+    {
+        GameManager.instance.RegisterPlayer(rescuedSprites);
+    }
+
     void Update()
     {
         HandleInput();
@@ -114,8 +119,9 @@ public class TempPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             transform.position = GameManager.instance.GetCurrentSpawnPoint().transform.position;
-            fireProjectile.SetCurrentProjectile(RescuedSprites.ElementSprite.Default);
+            rescuedSprites.SetCurrentState(GameManager.instance.GetCurrentSpawnPoint().savedElementState);
             GameManager.instance.GetCurrentSpawnPoint().levelReset.ResetObjects();
+            GameManager.instance.ClearNextLevel();
         }
     }
 }  
