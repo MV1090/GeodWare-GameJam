@@ -8,7 +8,7 @@ public class WaterSprite : BaseSprite
         {
             collision.gameObject.GetComponent<TempPlayer>().rescuedSprites.SetCurrentState(RescuedSprites.ElementSprite.Water);
 
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
         if (collision.gameObject.tag == "MovingPlatform")

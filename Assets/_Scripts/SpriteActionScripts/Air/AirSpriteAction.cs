@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AirSpriteAction : MonoBehaviour
+public class AirSpriteAction : BaseSpriteAction
 {
     [SerializeField] AirBooster booster;
 

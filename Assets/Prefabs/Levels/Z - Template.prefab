@@ -221,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5617796391131014104}
   - component: {fileID: 9020048426231464465}
+  - component: {fileID: 5656137255960984558}
   m_Layer: 0
   m_Name: Z - Template
   m_TagString: Untagged
@@ -263,6 +264,18 @@ MonoBehaviour:
   entryPoint: {fileID: 2660201619523799131}
   exitPoint: {fileID: 4052783307154835453}
   spawnPoint: {fileID: 775759377373896686}
+--- !u!114 &5656137255960984558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952346303806024817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6b1ec449594224fb6370bf098aa1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelReset
 --- !u!1 &3330752712820843841
 GameObject:
   m_ObjectHideFlags: 0
@@ -7990,6 +8003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775759377373896686}
   - component: {fileID: 5093577649703892670}
+  - component: {fileID: 2800835971461425803}
   m_Layer: 0
   m_Name: SpawnPoint
   m_TagString: Untagged
@@ -8058,6 +8072,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &2800835971461425803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6399361635004072574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e944eb79aa3370c4d925d22bb4ef1171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPoint
+  spawnPointID: 0
+  levelReset: {fileID: 5656137255960984558}
 --- !u!1 &7088490483451510298
 GameObject:
   m_ObjectHideFlags: 0

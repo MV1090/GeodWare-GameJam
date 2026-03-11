@@ -6,7 +6,7 @@ public class TempPlayer : MonoBehaviour
     public static TempPlayer instance;
 
     public RescuedSprites rescuedSprites;
-    FireProjectile fireProjectile;
+    private FireProjectile fireProjectile;
 
     [Header("Movement")]
     public float moveSpeed = 8f;
@@ -20,6 +20,7 @@ public class TempPlayer : MonoBehaviour
     public LayerMask groundLayer;
 
     private Rigidbody2D rb;
+    private SpriteRenderer sr;
     private bool isGrounded;
 
     private float moveInput;
@@ -28,6 +29,7 @@ public class TempPlayer : MonoBehaviour
     {        
         instance = this;
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         rescuedSprites = GetComponent<RescuedSprites>();
         fireProjectile = GetComponent<FireProjectile>();
     }
@@ -38,6 +40,7 @@ public class TempPlayer : MonoBehaviour
         HandleJump();
         PullLever();
         Fire();
+        ResetPlayer();
     }
 
     void FixedUpdate()
@@ -59,6 +62,7 @@ public class TempPlayer : MonoBehaviour
     void HandleInput()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
+        if(moveInput !=0) sr.flipX = moveInput < 0;
     }
 
     void Move()
@@ -102,6 +106,16 @@ public class TempPlayer : MonoBehaviour
                     break;
                 }
             }
+        }
+    }
+
+    public void ResetPlayer()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = GameManager.instance.GetCurrentSpawnPoint().transform.position;
+            fireProjectile.SetCurrentProjectile(RescuedSprites.ElementSprite.Default);
+            GameManager.instance.GetCurrentSpawnPoint().levelReset.ResetObjects();
         }
     }
 }  

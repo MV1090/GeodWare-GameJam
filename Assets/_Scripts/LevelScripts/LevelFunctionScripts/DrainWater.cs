@@ -4,14 +4,15 @@ using UnityEngine;
 public class DrainWater : MonoBehaviour
 {
     [SerializeField] FloatingPlatform floatingPlatform;
-
+    [SerializeField] float distance = 5f;
+ 
     public IEnumerator Drain()
     {
-
-        StartCoroutine(floatingPlatform.FloatUp());
+        if (floatingPlatform != null)
+            StartCoroutine(floatingPlatform.FloatUp());
 
         Vector2 startPos = transform.position;
-        Vector2 targetPos = startPos + Vector2.down * 5f;
+        Vector2 targetPos = startPos + Vector2.down * distance;
 
         float duration = 2f;
         float time = 0f;
@@ -24,6 +25,6 @@ public class DrainWater : MonoBehaviour
         }
         
         transform.position = targetPos;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

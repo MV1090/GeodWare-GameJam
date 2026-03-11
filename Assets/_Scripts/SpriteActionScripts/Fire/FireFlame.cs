@@ -20,8 +20,8 @@ public class FireFlame : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-
-        transform.localScale = targetSize;
-        Destroy(transform.parent.gameObject);
+        
+        transform.localScale = targetSize;        
+        transform.parent.gameObject.SetActive(false);
     }
 }

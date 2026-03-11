@@ -168,3 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649c399364bed1840879fe373a698e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterSpriteAction
+  xVel: 0
+  yVel: 0
+  lifeTime: 0

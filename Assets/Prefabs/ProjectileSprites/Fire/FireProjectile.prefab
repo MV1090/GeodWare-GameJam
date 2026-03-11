@@ -155,7 +155,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &8149660857630020172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,4 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4019a463ea4a1d4b874d164b8be779e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FireSpriteAction
+  xVel: 0
+  yVel: 0
+  lifeTime: 0
   fireFlame: {fileID: 7422513082841712209, guid: a84ee78ef6320a94e9f3cecea6b9caf9, type: 3}

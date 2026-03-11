@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35cbb165efae2544e9b0ffde7955727d, type: 3}
-  m_Name: AirLevel 1
+  m_Name: Fire Level 2
   m_EditorClassIdentifier: Assembly-CSharp::Level_Scriptable
-  levelType: Air
-  levelId: 575378712
-  level: {fileID: 1952346303806024817, guid: 371b19d2c811f214a8357d3fe98a0618, type: 3}
+  levelType: Fire
+  levelId: 1031778468
+  level: {fileID: 1952346303806024817, guid: f53f856bf20d0104ab17c143d38c625e, type: 3}

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.WSA;
 
-public class LeverPull : MonoBehaviour
+public class LeverPull : MonoBehaviour, IResettable
 {
     [SerializeField] GameObject[] effectedObjects;
     [SerializeField] LeverPull[] otherLevers;
@@ -9,6 +9,10 @@ public class LeverPull : MonoBehaviour
     private SpriteRenderer sr;     
 
     public bool canBePulled = true;
+
+    Color originalColor;
+    bool originalFlipX;
+    bool originalState;
 
     private void Start()
     {
@@ -50,6 +54,19 @@ public class LeverPull : MonoBehaviour
             lever.canBePulled = false;
             lever.sr.color = Color.red;
         }
-    }    
+    }
 
+    public void SaveState()
+    {
+        originalColor = sr.color;
+        originalFlipX = sr.flipX;
+        originalState = canBePulled;
+    }
+
+    public void ResetState()
+    {
+        sr.color = originalColor;
+        sr.flipX = originalFlipX;
+        canBePulled = originalState;
+    }
 }

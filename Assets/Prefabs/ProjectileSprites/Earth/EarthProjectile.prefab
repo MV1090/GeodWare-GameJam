@@ -155,7 +155,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &5416951213277938569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,4 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040c24dec02956945aaad1a3bfb2a363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EarthSpriteAction
+  xVel: 0
+  yVel: 0
+  lifeTime: 0
   platform: {fileID: 6080594796106332104, guid: 7861a5dbf3d83fb4fbc1d8e14e3c3079, type: 3}

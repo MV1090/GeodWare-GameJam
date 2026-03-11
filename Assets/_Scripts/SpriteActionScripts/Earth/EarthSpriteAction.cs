@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EarthSpriteAction : MonoBehaviour
+public class EarthSpriteAction : BaseSpriteAction
 {
 
     [SerializeField] GameObject platform;

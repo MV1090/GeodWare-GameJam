@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class RemoveBlocker : MonoBehaviour
+public class RemoveBlocker : MonoBehaviour, IResettable
 {    
     void Start()
     {
@@ -11,7 +11,17 @@ public class RemoveBlocker : MonoBehaviour
     {
         Debug.Log("blocker should be destroyed");
         TempPlayer.instance.rescuedSprites.OnStateChanged -= DestroyBlocker;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
+
+    public void SaveState()
+    {
         
+    }
+
+    public void ResetState()
+    {
+        gameObject.SetActive(true);
+        TempPlayer.instance.rescuedSprites.OnStateChanged += DestroyBlocker;
+    }
 }

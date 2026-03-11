@@ -1,7 +1,6 @@
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class FireSpriteAction : MonoBehaviour
+public class FireSpriteAction : BaseSpriteAction
 {
     [SerializeField] FireFlame fireFlame;
     private void OnCollisionEnter2D(Collision2D collision)
