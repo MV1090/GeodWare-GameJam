@@ -20,9 +20,12 @@ public class TempPlayer : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+    private Animator anim;
+
     private bool isGrounded;
     private bool wasGrounded;
 
+    
     public bool isDead;
 
     private float moveInput;
@@ -36,6 +39,7 @@ public class TempPlayer : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         rescuedSprites = GetComponent<RescuedSprites>();
         fireProjectile = GetComponent<FireProjectile>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -74,7 +78,15 @@ public class TempPlayer : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
 
         if (moveInput != 0)
+        {
             sr.flipX = moveInput < 0;
+            anim.SetBool("isMoving", true);
+        }
+        else
+        {
+            anim.SetBool("isMoving", false);
+        }
+
     }
 
     void Move()
@@ -96,12 +108,14 @@ public class TempPlayer : MonoBehaviour
     if (!wasGrounded && isGrounded)
     {
         AudioManager.Instance.PlayLanding(transform.position);
+            anim.SetBool("hasLanded", true);
     }
 
     if (Input.GetButtonDown("Jump") && isGrounded)
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        AudioManager.Instance.PlayJump();
+            anim.SetBool("hasLanded", false);
+            AudioManager.Instance.PlayJump();
     }
 }
 
