@@ -5,6 +5,7 @@ public class LeverPull : MonoBehaviour, IResettable
 {
     [SerializeField] GameObject[] effectedObjects;
     [SerializeField] LeverPull[] otherLevers;
+  
 
     private SpriteRenderer sr;     
 
@@ -23,6 +24,7 @@ public class LeverPull : MonoBehaviour, IResettable
     {
         if (!canBePulled)
             return;        
+           AudioManager.Instance.PlayLeverPull(); 
 
         ActivateOtherObjects();
         DisableOtherLevers();

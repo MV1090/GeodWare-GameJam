@@ -21,7 +21,6 @@ PluginImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -29,5 +28,3 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/platforms/android/lib/armeabi-v7a/libfmodL.so
   uploadId: 847624
-=======
->>>>>>> Stashed changes

@@ -1,11 +1,7 @@
 fileFormatVersion: 2
 guid: bca6f630c310b4945b52486d2ed1da0a
 timeCreated: 1511469552
-<<<<<<< Updated upstream
 licenseType: Store
-=======
-licenseType: Free
->>>>>>> Stashed changes
 PluginImporter:
   serializedVersion: 1
   iconMap: {}
@@ -70,7 +66,6 @@ PluginImporter:
         FrameworkDependencies: 
   userData: 
   assetBundleName: 
-<<<<<<< Updated upstream
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
@@ -79,6 +74,3 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/platforms/linux/lib/x86_64/libresonanceaudio.so
   uploadId: 847624
-=======
-  assetBundleVariant: 
->>>>>>> Stashed changes

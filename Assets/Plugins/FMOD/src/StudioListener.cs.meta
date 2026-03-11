@@ -1,11 +1,7 @@
 fileFormatVersion: 2
 guid: 86c6556701af9e04380698b89f691b6e
 timeCreated: 1449016511
-<<<<<<< Updated upstream
 licenseType: Store
-=======
-licenseType: Free
->>>>>>> Stashed changes
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
@@ -14,7 +10,6 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -22,5 +17,3 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/src/StudioListener.cs
   uploadId: 847624
-=======
->>>>>>> Stashed changes

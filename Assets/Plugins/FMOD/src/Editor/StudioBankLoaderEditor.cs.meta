@@ -1,11 +1,7 @@
 fileFormatVersion: 2
 guid: f7f61e03a350e1e428dba6c562f3d64a
 timeCreated: 1434691856
-<<<<<<< Updated upstream
 licenseType: Store
-=======
-licenseType: Free
->>>>>>> Stashed changes
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
@@ -14,7 +10,6 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -22,5 +17,3 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/src/Editor/StudioBankLoaderEditor.cs
   uploadId: 847624
-=======
->>>>>>> Stashed changes

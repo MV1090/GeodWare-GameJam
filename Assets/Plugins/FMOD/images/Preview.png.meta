@@ -1,11 +1,7 @@
 fileFormatVersion: 2
 guid: 0793eda432fc5df4ab1291e6baacd771
 timeCreated: 1434430906
-<<<<<<< Updated upstream
 licenseType: Store
-=======
-licenseType: Free
->>>>>>> Stashed changes
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 2
@@ -58,7 +54,6 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-<<<<<<< Updated upstream
 AssetOrigin:
   serializedVersion: 1
   productId: 311497
@@ -66,5 +61,3 @@ AssetOrigin:
   packageVersion: 2.03.11
   assetPath: Assets/Plugins/FMOD/images/Preview.png
   uploadId: 847624
-=======
->>>>>>> Stashed changes
