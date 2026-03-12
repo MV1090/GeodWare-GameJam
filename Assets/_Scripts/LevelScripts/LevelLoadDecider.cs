@@ -2,12 +2,19 @@ using UnityEngine;
 
 public class LevelLoadDecider : MonoBehaviour
 {
+
+    bool hasTriggered = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.gameObject.CompareTag("Player"))
             return;
+        if (hasTriggered)
+            return;
 
         AudioManager.Instance.SetMusicParameter("level loaded", 1f);
+
+        hasTriggered = true;
 
         switch (TempPlayer.instance.rescuedSprites.GetCurrentState())
         {

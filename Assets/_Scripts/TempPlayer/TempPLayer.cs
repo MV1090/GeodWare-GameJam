@@ -25,7 +25,8 @@ public class TempPlayer : MonoBehaviour
     private bool isGrounded;
     private bool wasGrounded;
 
-    
+    bool isPauseMenuOpen = false;
+
     public bool isDead;
 
     private float moveInput;
@@ -49,12 +50,16 @@ public class TempPlayer : MonoBehaviour
 
     void Update()
     {
+        if (isPauseMenuOpen) { PauseGame(); return; }
+                        
+        
         HandleInput();
         HandleJump();
         HandleFootsteps();
         PullLever();
         Fire();
         ResetPlayer();
+        PauseGame();
     }
 
     void FixedUpdate()
@@ -94,30 +99,30 @@ public class TempPlayer : MonoBehaviour
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
     }
 
-  void HandleJump()
-{
-    wasGrounded = isGrounded;
-
-    isGrounded = Physics2D.OverlapCircle(
-        groundCheck.position,
-        groundCheckRadius,
-        groundLayer
-    );
-
-    // Detect landing
-    if (!wasGrounded && isGrounded)
+    void HandleJump()
     {
-        AudioManager.Instance.PlayLanding(transform.position);
+        wasGrounded = isGrounded;
+
+        isGrounded = Physics2D.OverlapCircle(
+            groundCheck.position,
+            groundCheckRadius,
+            groundLayer
+        );
+
+        // Detect landing
+        if (!wasGrounded && isGrounded)
+        {
+            AudioManager.Instance.PlayLanding(transform.position);
             anim.SetBool("hasLanded", true);
-    }
+        }
 
-    if (Input.GetButtonDown("Jump") && isGrounded)
-    {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             anim.SetBool("hasLanded", false);
             AudioManager.Instance.PlayJump();
+        }
     }
-}
 
     void HandleFootsteps()
     {
@@ -196,5 +201,28 @@ public class TempPlayer : MonoBehaviour
         }
 
         footstepsActive = false;
+    }
+
+    
+
+    void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPauseMenuOpen)
+            {
+                if (MenuManager.instance != null)
+                {
+                    MenuManager.instance.JumpBack();
+                }
+                isPauseMenuOpen = false;
+            }
+            else
+            {
+                if (MenuManager.instance != null)
+                    MenuManager.instance.SetActiveMenu(MenuManager.MenuType.PauseMenu);
+                isPauseMenuOpen = true;
+            }
+        }
     }
 }

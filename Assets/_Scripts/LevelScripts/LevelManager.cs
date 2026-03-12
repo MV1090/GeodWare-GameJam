@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
+    public static LevelManager instance { get; private set; }
 
     public Level_Catalog_Scriptable levelCatalog;
     private LevelSegments previousLevel;
