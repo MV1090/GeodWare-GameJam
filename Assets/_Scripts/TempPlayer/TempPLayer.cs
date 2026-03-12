@@ -25,7 +25,7 @@ public class TempPlayer : MonoBehaviour
     private bool isGrounded;
     private bool wasGrounded;
 
-    bool isPauseMenuOpen = false;
+    public bool isPauseMenuOpen = false;
 
     public bool isDead;
 
@@ -50,8 +50,7 @@ public class TempPlayer : MonoBehaviour
 
     void Update()
     {
-        if (isPauseMenuOpen) { PauseGame(); return; }
-                        
+        if (isPauseMenuOpen) { PauseGame(); return; }                        
         
         HandleInput();
         HandleJump();
