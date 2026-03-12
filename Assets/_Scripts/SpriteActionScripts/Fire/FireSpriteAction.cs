@@ -7,6 +7,7 @@ public class FireSpriteAction : BaseSpriteAction
     {
         if (collision.gameObject.tag == "Crate")
         {
+            AudioManager.Instance. PlayStartFire(transform.position);
             GameObject fire;
             fire = Instantiate(fireFlame.gameObject, new Vector3(collision.gameObject.transform.position.x, 
                 collision.gameObject.transform.position.y - collision.gameObject.transform.localScale.y * 0.25f, 

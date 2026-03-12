@@ -17,14 +17,21 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private EventReference landingEvent;
     [SerializeField] private EventReference spriteCollectEvent;
     [SerializeField] private EventReference waterDropEvent;
+    [SerializeField] private EventReference buildPlatformEvent;
+    [SerializeField] private EventReference createWhirlwindEvent;
+    [SerializeField] private EventReference startFireEvent;
+    [SerializeField] private EventReference impaleEvent;
 
     [Header("Looping SFX")]
     [SerializeField] private EventReference footstepLoopEvent;
+    [SerializeField] private EventReference fireLoopEvent;
 
     private EventInstance musicInstance;
     private EventInstance ambienceInstance;
     private EventInstance footstepInstance;
-
+    private EventInstance fireLoopInstance;
+    
+    private bool fireLoopPlaying = false;
     private bool musicCreated = false;
     private bool ambienceCreated = false;
     private bool musicPlaying = false;
@@ -43,7 +50,7 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         CreatePersistentAudio();
-        StartPersistentAudio();
+        StartMusic();
     }
 
     private void CreatePersistentAudio()
@@ -61,6 +68,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StartMusic()
+{
+    if (musicCreated && !musicPlaying)
+    {
+        musicInstance.start();
+        musicPlaying = true;
+    }
+}
+
     public void StartPersistentAudio()
     {
         if (musicCreated && !musicPlaying)
@@ -76,6 +92,15 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StartAmbience()
+{
+    if (ambienceCreated && !ambiencePlaying)
+    {
+        ambienceInstance.start();
+        ambiencePlaying = true;
+    }
+}
+
     public void StopPersistentAudio()
     {
         if (musicCreated && musicPlaying)
@@ -90,6 +115,14 @@ public class AudioManager : MonoBehaviour
             ambiencePlaying = false;
         }
     }
+
+    public void SetMusicState(float state)
+{
+    if (musicCreated)
+    {
+        musicInstance.setParameterByName("Music State", state);
+    }
+}
 
     public void SetMusicParameter(string parameterName, float value)
     {
@@ -123,6 +156,30 @@ public void PlayWaterDrop(Vector3 worldPosition)
     }
 }
 
+public void PlayBuildPlatform(Vector3 worldPosition)
+{
+    if (!buildPlatformEvent.IsNull)
+    {
+        RuntimeManager.PlayOneShot(buildPlatformEvent, worldPosition);
+    }
+}
+
+public void PlayCreateWhirlwind(Vector3 worldPosition)
+{
+    if (!createWhirlwindEvent.IsNull)
+    {
+        RuntimeManager.PlayOneShot(createWhirlwindEvent, worldPosition);
+    }
+}
+
+public void PlayStartFire(Vector3 worldPosition)
+{
+    if (!startFireEvent.IsNull)
+    {
+        RuntimeManager.PlayOneShot(startFireEvent, worldPosition);
+    }
+}
+
     public void PlaySpritesFall()
     {
         if (!spritesFallEvent.IsNull)
@@ -144,6 +201,14 @@ public void PlayWaterDrop(Vector3 worldPosition)
     if (!landingEvent.IsNull)
     {
         RuntimeManager.PlayOneShot(landingEvent, worldPosition);
+    }
+}
+
+public void PlayImpale(Vector3 worldPosition)
+{
+    if (!impaleEvent.IsNull)
+    {
+        RuntimeManager.PlayOneShot(impaleEvent, worldPosition);
     }
 }
 
@@ -173,6 +238,35 @@ public void PlayWaterDrop(Vector3 worldPosition)
             footstepPlaying = false;
         }
     }
+
+    public void StartFireLoop(GameObject fireObject)
+{
+    if (!fireLoopPlaying && !fireLoopEvent.IsNull)
+    {
+        fireLoopInstance = RuntimeManager.CreateInstance(fireLoopEvent);
+
+        Rigidbody2D rb2D = fireObject.GetComponent<Rigidbody2D>();
+
+        RuntimeManager.AttachInstanceToGameObject(
+            fireLoopInstance,
+            fireObject.transform,
+            rb2D
+        );
+
+        fireLoopInstance.start();
+        fireLoopPlaying = true;
+    }
+}
+
+public void StopFireLoop()
+{
+    if (fireLoopPlaying)
+    {
+        fireLoopInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        fireLoopInstance.release();
+        fireLoopPlaying = false;
+    }
+}
 
     private void OnDestroy()
     {

@@ -9,6 +9,7 @@ public class EarthSpriteAction : BaseSpriteAction
    {
         if (collision.gameObject.tag == "Spikes")
         {
+            AudioManager.Instance.PlayBuildPlatform(transform.position);
             Instantiate(platform.gameObject, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

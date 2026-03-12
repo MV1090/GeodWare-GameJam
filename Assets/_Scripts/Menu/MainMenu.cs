@@ -5,17 +5,22 @@ public class MainMenu : BaseMenu
     override public void EnterState()
     {
         base.EnterState();
-        Time.timeScale = 0f; // Ensure the game is running when entering the MainMenu
+        Time.timeScale = 0f;
     }
 
     override public void ExitState()
     {
         base.ExitState();
-        // No need to change time scale here, as it should be handled by the specific menus that pause the game (like PauseMenu or EndGameMenu)
     }
 
     public void JumpToGameMenu()
     {
+        // Change FMOD music state from Menu → Game
+        AudioManager.Instance.SetMusicState(1f);
+
+         // Start ambience when game begins
+    AudioManager.Instance.StartAmbience();
+
         context.SetActiveMenu(MenuManager.MenuType.GameUI);
     }
 }

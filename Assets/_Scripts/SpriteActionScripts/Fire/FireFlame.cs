@@ -5,8 +5,13 @@ public class FireFlame : MonoBehaviour
 {
     private void OnEnable()
     {        
+        // 🔥 Start fire loop sound
+        AudioManager.Instance.StartFireLoop(gameObject);
+
         StartCoroutine(GrowOverTime(2f));             
     }
+
+    
 
     IEnumerator GrowOverTime(float duration)
     {
@@ -21,7 +26,11 @@ public class FireFlame : MonoBehaviour
             yield return null;
         }
         
-        transform.localScale = targetSize;        
+        transform.localScale = targetSize;   
+
+        // 🔥 Stop fire loop with fadeout
+        AudioManager.Instance.StopFireLoop();
+             
         transform.parent.gameObject.SetActive(false);
     }
 }

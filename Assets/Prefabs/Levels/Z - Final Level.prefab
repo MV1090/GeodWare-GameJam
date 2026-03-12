@@ -34940,7 +34940,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1541427344883726937, guid: 77eeb4097d9c4484c8208246d952a563, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2633480787363461406}
   m_SourcePrefab: {fileID: 100100000, guid: 77eeb4097d9c4484c8208246d952a563, type: 3}
 --- !u!4 &434846692022958920 stripped
 Transform:
@@ -34952,6 +34955,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1541427344883726937, guid: 77eeb4097d9c4484c8208246d952a563, type: 3}
   m_PrefabInstance: {fileID: 5049346736676563204}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2633480787363461406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014172586592457565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff07c0b4d5e0d2f49a98899eea5652fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpaleOnSpikes
+  triggerDistance: 4
+  solidLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1001 &5877337889384001545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35007,13 +35026,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5339914320353856440, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6305133413542090178}
   m_SourcePrefab: {fileID: 100100000, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
 --- !u!1 &1984768449101691825 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5339914320353856440, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
   m_PrefabInstance: {fileID: 5877337889384001545}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6305133413542090178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984768449101691825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff07c0b4d5e0d2f49a98899eea5652fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpaleOnSpikes
+  triggerDistance: 4
+  solidLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!4 &7419182080866925968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3991954400605719961, guid: cb955e398464a2248a911d6d2a8be388, type: 3}
@@ -35161,7 +35199,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7769540834113284962, guid: 2dad78b903de56e4e949a7f9037a3e22, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 666947786924528421}
   m_SourcePrefab: {fileID: 100100000, guid: 2dad78b903de56e4e949a7f9037a3e22, type: 3}
 --- !u!4 &1128834666806302192 stripped
 Transform:
@@ -35173,6 +35214,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7769540834113284962, guid: 2dad78b903de56e4e949a7f9037a3e22, type: 3}
   m_PrefabInstance: {fileID: 6853963614536886328}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &666947786924528421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3804661726840521562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff07c0b4d5e0d2f49a98899eea5652fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpaleOnSpikes
+  triggerDistance: 4
+  solidLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1001 &7128821398862874202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35228,13 +35285,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 470100562284895075, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 91425664614979292}
   m_SourcePrefab: {fileID: 100100000, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
 --- !u!1 &7235183102507556153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 470100562284895075, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}
   m_PrefabInstance: {fileID: 7128821398862874202}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &91425664614979292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7235183102507556153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff07c0b4d5e0d2f49a98899eea5652fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImpaleOnSpikes
+  triggerDistance: 4
+  solidLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!4 &9049930862976074088 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2267977345210271538, guid: 578a4764ee8aab64485c17b1b89ad55e, type: 3}

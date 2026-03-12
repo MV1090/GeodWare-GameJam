@@ -264,6 +264,34 @@ MonoBehaviour:
       Data3: -2137338437
       Data4: 1757342292
     Path: event:/SFX/Sprite/Sprite_Used_Water
+  buildPlatformEvent:
+    Guid:
+      Data1: 1159669312
+      Data2: 1166387987
+      Data3: -934797663
+      Data4: 1098894406
+    Path: event:/SFX/Sprite/Sprite_Used_Earth
+  createWhirlwindEvent:
+    Guid:
+      Data1: 2032287433
+      Data2: 1085987355
+      Data3: -430461019
+      Data4: 2083154561
+    Path: event:/SFX/Sprite/Sprite_Used_Air
+  startFireEvent:
+    Guid:
+      Data1: 1613073756
+      Data2: 1079653342
+      Data3: -714670174
+      Data4: -628489100
+    Path: event:/SFX/Sprite/Sprite_Used_Fire
+  impaleEvent:
+    Guid:
+      Data1: 1309941876
+      Data2: 1200602348
+      Data3: -1973173345
+      Data4: 159803583
+    Path: event:/SFX/Environment/Impaled
   footstepLoopEvent:
     Guid:
       Data1: -469500596
@@ -271,6 +299,13 @@ MonoBehaviour:
       Data3: -537580111
       Data4: 587892748
     Path: event:/SFX/Player/Player_Walk
+  fireLoopEvent:
+    Guid:
+      Data1: 1407227445
+      Data2: 1094865127
+      Data3: -389811542
+      Data4: -1126990535
+    Path: event:/SFX/Environment/Fire_Crackle
 --- !u!1 &254014946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1250,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  isPauseMenuOpen: 0
   isDead: 0
 --- !u!212 &1712361590
 SpriteRenderer:
