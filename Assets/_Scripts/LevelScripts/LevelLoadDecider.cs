@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class LevelLoadDecider : MonoBehaviour
 {
-
-    bool hasTriggered = false;
+    public bool hasTriggered = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,7 +15,7 @@ public class LevelLoadDecider : MonoBehaviour
 
         hasTriggered = true;
 
-        switch (TempPlayer.instance.rescuedSprites.GetCurrentState())
+        switch (GameManager.instance.pendingLevelElement)
         {
             case RescuedSprites.ElementSprite.Earth:
                 LevelManager.instance.LoadNextLevelByType("Earth");

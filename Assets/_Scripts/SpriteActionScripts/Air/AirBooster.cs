@@ -1,7 +1,17 @@
 using UnityEngine;
 
-public class AirBooster : MonoBehaviour
+public class AirBooster : MonoBehaviour, IResettable
 {
+    public void SaveState()
+    {
+        // no Save State needed for this object
+    }
+
+    public void ResetState()
+    {
+        Destroy(gameObject);
+    }
+
     [SerializeField] private float boostForce = 20f;
     
     void Start()

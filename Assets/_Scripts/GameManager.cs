@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     public RescuedSprites.ElementSprite pendingLevelElement = RescuedSprites.ElementSprite.Default;
 
     public bool levelLockedIn;
+
+    public List<GameObject> activeLevelRef;
 
     private void Awake()
     {
