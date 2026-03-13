@@ -45,7 +45,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639090069556494246
+  lastModified: 639090181004811956
   FileSizes: []
   Exists: 1
 --- !u!114 &-4688494389683870454
@@ -171,7 +171,7 @@ MonoBehaviour:
   Name: Music State
   StudioPath: 
   Min: 0
-  Max: 1
+  Max: 2
   Default: 0
   ID:
     data1: 281423923
@@ -181,6 +181,7 @@ MonoBehaviour:
   Labels:
   - Menu
   - Game
+  - Pause
   Exists: 1
 --- !u!114 &-758572488277253156
 MonoBehaviour:
@@ -278,10 +279,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639090069556518656
+  lastModified: 639090181004849014
   FileSizes:
   - Name: 
-    Value: 1810
+    Value: 1952
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -320,13 +321,14 @@ MonoBehaviour:
   - {fileID: 6714153476484281080}
   - {fileID: -484135230960681438}
   - {fileID: 1623953354053543253}
+  - {fileID: 5307829090334728418}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5639210551741677901}
   StringsBanks:
   - {fileID: -63992952461618684}
   cacheVersion: 131858
-  cacheTime: 639090070563877801
+  cacheTime: 639090248785813797
   SerializableEventsDict:
   - key: event:/SFX/Environment/Lever
     index: 0
@@ -366,6 +368,8 @@ MonoBehaviour:
     index: 17
   - key: event:/SFX/Player/Player_Throw
     index: 18
+  - key: snapshot:/Pause menu
+    index: 19
 --- !u!114 &303070637014982456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,6 +556,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5307829090334728418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Pause menu
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: snapshot:/Pause menu
+  Guid:
+    Data1: -1428536402
+    Data2: 1312307646
+    Data3: 633388473
+    Data4: -1871973533
+  Banks:
+  - {fileID: -5639210551741677901}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &5922884898205698323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,7 +598,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639090067585572158
+  lastModified: 639090134426720732
   FileSizes: []
   Exists: 1
 --- !u!114 &6714153476484281080
@@ -690,7 +721,7 @@ MonoBehaviour:
   Path: Assets/FMOD/Banks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639090070563877801
+  lastModified: 639090248785813797
   FileSizes: []
   Exists: 1
 --- !u!114 &9015559091084768672

@@ -321,6 +321,13 @@ MonoBehaviour:
       Data3: -736828510
       Data4: -883830963
     Path: event:/SFX/Environment/Splash
+  splashTailEvent:
+    Guid:
+      Data1: 2119793283
+      Data2: 1253226219
+      Data3: -2137338437
+      Data4: 1757342292
+    Path: event:/SFX/Sprite/Sprite_Used_Water
   footstepLoopEvent:
     Guid:
       Data1: -469500596
