@@ -1,8 +1,19 @@
 using System.Collections;
 using UnityEngine;
 
-public class FireFlame : MonoBehaviour
+public class FireFlame : MonoBehaviour, IResettable
 {
+
+    public void SaveState()
+    {
+        // No state to save for this object
+    }
+
+    public void ResetState()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnEnable()
     {        
         // 🔥 Start fire loop sound

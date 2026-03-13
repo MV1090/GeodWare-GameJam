@@ -1,8 +1,19 @@
 using System.Collections;
 using UnityEngine;
 
-public class DrainWater : MonoBehaviour
+public class DrainWater : MonoBehaviour, IResettable
 {
+    private Vector2 originalPosition;
+    public void SaveState()
+    {
+        originalPosition = transform.position;
+    }
+
+    public void ResetState()
+    {
+        transform.position = originalPosition;
+    }
+
     [SerializeField] FloatingPlatform floatingPlatform;
     [SerializeField] float distance = 5f;
  

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -10,6 +11,7 @@ public class LevelManager : MonoBehaviour
     public Level_Catalog_Scriptable levelCatalog;
     private LevelSegments previousLevel;
     private HashSet<Level_Scriptable> loadedLevels = new HashSet<Level_Scriptable>();
+    [SerializeField] private List<GameObject> activeLevelRefs = new List<GameObject>();
 
     private void Awake()
     {
@@ -26,18 +28,33 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        //if (levelCatalog == null || levelCatalog.allLevels.Count == 0)
+        //{
+        //    Debug.LogError("Level Catalog is not assigned or contains no levels. Please assign a Level Catalog with levels.");
+        //    return;
+        //}
+                        
+        //LoadLevel(levelCatalog.allLevels[0]);
+        //loadedLevels.Add(levelCatalog.allLevels[0]);
+        //TempPlayer.instance.transform.position = previousLevel.spawnPoint.position;
+    }
+
+    public void LoadFirstLevel()
+    {
         if (levelCatalog == null || levelCatalog.allLevels.Count == 0)
         {
             Debug.LogError("Level Catalog is not assigned or contains no levels. Please assign a Level Catalog with levels.");
             return;
         }
-                        
+
+        ResetLevels();
         LoadLevel(levelCatalog.allLevels[0]);
         loadedLevels.Add(levelCatalog.allLevels[0]);
+
         TempPlayer.instance.transform.position = previousLevel.spawnPoint.position;
     }
 
-    public void LoadNextLevelByType(string levelType)
+        public void LoadNextLevelByType(string levelType)
     {      
         Level_Scriptable levelToLoad = levelCatalog.allLevels
             .Where(level => level.levelType == levelType && !loadedLevels.Contains(level))
@@ -62,6 +79,8 @@ public class LevelManager : MonoBehaviour
     {
         GameObject nextLevelObj = Instantiate(levelData.level);
 
+        activeLevelRefs.Add(nextLevelObj);
+
         LevelSegments nextLevel = nextLevelObj.GetComponent<LevelSegments>();
 
         SpawnPoint sp = nextLevel.spawnPoint.gameObject.GetComponent<SpawnPoint>();
@@ -73,7 +92,7 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(sp.WaitForLoad());
 
             return;
-        }        
+        }             
 
         StartCoroutine(sp.WaitForLoad());
 
@@ -108,5 +127,15 @@ public class LevelManager : MonoBehaviour
     {
         Vector3 offset = from.exitPoint.position - to.entryPoint.position;
         to.transform.position += offset;
+    }
+
+    public void ResetLevels()
+    {
+        loadedLevels.Clear();
+        foreach (var levelRef in activeLevelRefs)
+        {
+            Destroy(levelRef);
+        }
+        activeLevelRefs.Clear();
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6556275329198342893}
   - component: {fileID: 2180377057670535830}
   - component: {fileID: 5221653406496469}
+  - component: {fileID: 1486159787830431422}
   m_Layer: 3
   m_Name: EarthPlatform
   m_TagString: Untagged
@@ -137,3 +138,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1486159787830431422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080594796106332104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c694e59ff57ec4642a6d8a31d1e9ceb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EarthPlatform
