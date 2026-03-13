@@ -38,9 +38,14 @@ MonoBehaviour:
     tutorialText: '"You can still help us!
 
 
-      Pull the lever and we will escape."'
+      Pull the lever and we will escape.
+      but you can only save one of us."'
     trigger: 5
-  - speaker: 'Earth:'
+  - speaker: 'Air:'
+    tutorialText: '"The lever is on that moving platform.  Jump onto it and pull
+      the lever."  Right Click while standing near it.'
+    trigger: 6
+  - speaker: 
     tutorialText: "\"There is a puzzle ahead that blocks your path.\"  \"I can release
       my elemental power to help you.\"  \"Throw me at something using Left Click.\" 
       \"If I strike the right object\u2026 my power will awaken.\""
