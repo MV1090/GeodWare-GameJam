@@ -23651,6 +23651,7 @@ GameObject:
   - component: {fileID: 523036472906399426}
   - component: {fileID: 3356220073330592277}
   - component: {fileID: 8981304302557167445}
+  - component: {fileID: 4669045608921409214}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -27114,6 +27115,18 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &4669045608921409214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740034759242446679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7492a61854f464e9695f8386e6ba23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SplashTrigger
 --- !u!1 &6399361635004072574
 GameObject:
   m_ObjectHideFlags: 0
@@ -27284,6 +27297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a9e267be8f38640bfb9f0917b4f4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelLoadDecider
+  hasTriggered: 0
 --- !u!61 &6444233317544925707
 BoxCollider2D:
   m_ObjectHideFlags: 0

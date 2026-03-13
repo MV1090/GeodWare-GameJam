@@ -63,6 +63,8 @@ public class FireProjectile : MonoBehaviour
             BaseSpriteAction projectileAction = projectile.GetComponent<BaseSpriteAction>();
             projectileAction.xVel = xVelocity;
             projectileAction.yVel = yVelocity;
+
+            AudioManager.Instance.PlayThrow(firePointRight.position);
         }
         else
         {

@@ -15,6 +15,8 @@ public class WaterSpriteAction : BaseSpriteAction
             StartCoroutine(drainWater.Drain()); 
             
             Destroy(gameObject, .5f);
+
+            
         }
     }
         

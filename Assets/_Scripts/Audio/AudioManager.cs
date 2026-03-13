@@ -11,16 +11,20 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private EventReference ambienceEvent;
 
     [Header("One-shot SFX")]
+    [SerializeField] private EventReference startGameEvent;
     [SerializeField] private EventReference leverPullEvent;
     [SerializeField] private EventReference spritesFallEvent;
     [SerializeField] private EventReference jumpEvent;
+    [SerializeField] private EventReference throwEvent;
     [SerializeField] private EventReference landingEvent;
     [SerializeField] private EventReference spriteCollectEvent;
+    [SerializeField] private EventReference spriteSuccessEvent;
     [SerializeField] private EventReference waterDropEvent;
     [SerializeField] private EventReference buildPlatformEvent;
     [SerializeField] private EventReference createWhirlwindEvent;
     [SerializeField] private EventReference startFireEvent;
     [SerializeField] private EventReference impaleEvent;
+    [SerializeField] private EventReference splashEvent;
 
     [Header("Looping SFX")]
     [SerializeField] private EventReference footstepLoopEvent;
@@ -132,6 +136,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayStartGame()
+    {
+        if (!startGameEvent.IsNull)
+        {
+            RuntimeManager.PlayOneShot(startGameEvent);
+        }
+    }
+
     public void PlayLeverPull()
     {
         if (!leverPullEvent.IsNull)
@@ -146,6 +158,17 @@ public class AudioManager : MonoBehaviour
     {
         RuntimeManager.PlayOneShot(spriteCollectEvent, worldPosition);
     }
+}
+public void PlaySpriteSuccess()
+{
+    Debug.Log("PlaySpriteSuccess called");
+
+    if (!spriteSuccessEvent.IsNull)
+    {
+        Debug.Log("spriteSuccessEvent is assigned");
+        RuntimeManager.PlayOneShot(spriteSuccessEvent);
+    }
+    
 }
 
 public void PlayWaterDrop(Vector3 worldPosition)
@@ -196,6 +219,14 @@ public void PlayStartFire(Vector3 worldPosition)
         }
     }
 
+     public void PlayThrow(Vector3 position)
+    {
+        if (!throwEvent.IsNull)
+        {
+            RuntimeManager.PlayOneShot(throwEvent);
+        }
+    }
+
     public void PlayLanding(Vector3 worldPosition)
 {
     if (!landingEvent.IsNull)
@@ -209,6 +240,14 @@ public void PlayImpale(Vector3 worldPosition)
     if (!impaleEvent.IsNull)
     {
         RuntimeManager.PlayOneShot(impaleEvent, worldPosition);
+    }
+}
+
+public void PlaySplash(Vector3 worldPosition)
+{
+    if (!splashEvent.IsNull)
+    {
+        RuntimeManager.PlayOneShot(splashEvent, worldPosition);
     }
 }
 

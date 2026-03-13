@@ -15,6 +15,7 @@ public class MainMenu : BaseMenu
 
     public void JumpToGameMenu()
     {
+        AudioManager.Instance.PlayStartGame();
         // Change FMOD music state from Menu → Game
         AudioManager.Instance.SetMusicState(1f);
 

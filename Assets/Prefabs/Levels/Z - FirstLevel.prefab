@@ -30862,6 +30862,7 @@ GameObject:
   - component: {fileID: 1846298566239975126}
   - component: {fileID: 4599405876277208447}
   - component: {fileID: 4994147732949871767}
+  - component: {fileID: 7646150276931777733}
   m_Layer: 4
   m_Name: Water
   m_TagString: Water
@@ -31517,7 +31518,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 14
-      m_TileSpriteIndex: 12
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 1
       m_TileObjectToInstantiateIndex: 65535
@@ -31584,12 +31585,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300004, guid: 73398d231c2af4d46bd9cf4c231f519e, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 21300006, guid: 73398d231c2af4d46bd9cf4c231f519e, type: 3}
   - m_RefCount: 60
@@ -31896,6 +31897,18 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &7646150276931777733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740034759242446679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7492a61854f464e9695f8386e6ba23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SplashTrigger
 --- !u!1 &6399361635004072574
 GameObject:
   m_ObjectHideFlags: 0
@@ -32066,6 +32079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a9e267be8f38640bfb9f0917b4f4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelLoadDecider
+  hasTriggered: 0
 --- !u!61 &6444233317544925707
 BoxCollider2D:
   m_ObjectHideFlags: 0

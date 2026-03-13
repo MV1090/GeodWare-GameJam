@@ -24865,6 +24865,7 @@ GameObject:
   - component: {fileID: 3318410741842237591}
   - component: {fileID: 3416818931648170540}
   - component: {fileID: 7149420231415484287}
+  - component: {fileID: 1829127389946334095}
   m_Layer: 4
   m_Name: Water Right
   m_TagString: Water
@@ -25645,6 +25646,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrainWater
   floatingPlatform: {fileID: 8984337202596073147}
   distance: 5
+--- !u!114 &1829127389946334095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3495785115846312217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7492a61854f464e9695f8386e6ba23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SplashTrigger
 --- !u!1 &5400553590780438947
 GameObject:
   m_ObjectHideFlags: 0
@@ -25693,6 +25706,7 @@ GameObject:
   - component: {fileID: 4907896453569180372}
   - component: {fileID: 7500832740649626223}
   - component: {fileID: 2363412136839801544}
+  - component: {fileID: 7218094635714125845}
   m_Layer: 4
   m_Name: Water Left
   m_TagString: Water
@@ -26473,6 +26487,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DrainWater
   floatingPlatform: {fileID: 3313741241125226162}
   distance: 5
+--- !u!114 &7218094635714125845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5740034759242446679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7492a61854f464e9695f8386e6ba23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SplashTrigger
 --- !u!1 &6399361635004072574
 GameObject:
   m_ObjectHideFlags: 0
@@ -26823,6 +26849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a9e267be8f38640bfb9f0917b4f4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelLoadDecider
+  hasTriggered: 0
 --- !u!61 &6444233317544925707
 BoxCollider2D:
   m_ObjectHideFlags: 0

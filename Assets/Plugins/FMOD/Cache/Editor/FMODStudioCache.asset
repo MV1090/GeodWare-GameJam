@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6340628205458432001
+--- !u!114 &-7795082369461379033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,47 +9,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Sprite Collected
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Sprite Collected
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2064816297
-    data2: 2769375032
-  Type: 1
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-5924843446621113663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Music State
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Music State
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 281423923
-    data2: 803063739
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Menu
-  - Game
-  Exists: 1
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music
+  Guid:
+    Data1: 1996726529
+    Data2: 1320705181
+    Data3: 730096521
+    Data4: 691744501
+  Banks:
+  - {fileID: 5922884898205698323}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8372252248506975276}
+  - {fileID: -2360287274576475652}
+  - {fileID: 3358669567016513186}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1030344
 --- !u!114 &-5639210551741677901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,9 +45,36 @@ MonoBehaviour:
   Path: Assets/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639089151633772731
+  lastModified: 639090069556494246
   FileSizes: []
   Exists: 1
+--- !u!114 &-4688494389683870454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sprite/Sprite Dies
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Sprite/Sprite Dies
+  Guid:
+    Data1: 448228873
+    Data2: 1074871197
+    Data3: 1004408214
+    Data4: 1160847558
+  Banks:
+  - {fileID: 8477919641142475505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3584176954491668236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,34 +156,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2384335039103924143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Sprite/Sprite Dies
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/Sprite/Sprite Dies
-  Guid:
-    Data1: 448228873
-    Data2: 1074871197
-    Data3: 1004408214
-    Data4: 1160847558
-  Banks:
-  - {fileID: 8477919641142475505}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-996983073555943313
+--- !u!114 &-2360287274576475652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,19 +166,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music/Level loaded
+  m_Name: parameter:/Music/Music State
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
-  Name: Level loaded
+  Name: Music State
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 2233119576
-    data2: 2326627525
-  Type: 1
+    data1: 281423923
+    data2: 803063739
+  Type: 2
   IsGlobal: 0
-  Labels: []
+  Labels:
+  - Menu
+  - Game
   Exists: 1
 --- !u!114 &-758572488277253156
 MonoBehaviour:
@@ -227,6 +209,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-639631592371617569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sprite/Sprite Collected
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Sprite/Sprite Collected
+  Guid:
+    Data1: 1995767816
+    Data2: 1155710561
+    Data3: -336532060
+    Data4: -1118969771
+  Banks:
+  - {fileID: 8477919641142475505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-484135230960681438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Sprite/Sprite_Success
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Sprite/Sprite_Success
+  Guid:
+    Data1: 1042790690
+    Data2: 1117097876
+    Data3: 544172192
+    Data4: -1655382578
+  Banks:
+  - {fileID: 8477919641142475505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-63992952461618684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,10 +278,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639089151633803329
+  lastModified: 639090069556518656
   FileSizes:
   - Name: 
-    Value: 1698
+    Value: 1810
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -265,9 +301,6 @@ MonoBehaviour:
   - {fileID: 5922884898205698323}
   - {fileID: 8477919641142475505}
   EditorEvents:
-  - {fileID: 5228641668474474683}
-  - {fileID: 9011763486978892590}
-  - {fileID: -2384335039103924143}
   - {fileID: 2327632230987791536}
   - {fileID: 303070637014982456}
   - {fileID: 545007966407706391}
@@ -279,48 +312,60 @@ MonoBehaviour:
   - {fileID: 6759946490545731846}
   - {fileID: -2557876761101027325}
   - {fileID: 9173107524620521688}
-  - {fileID: 4944054500411096962}
   - {fileID: -758572488277253156}
+  - {fileID: 4547787509989630589}
+  - {fileID: -7795082369461379033}
+  - {fileID: -639631592371617569}
+  - {fileID: -4688494389683870454}
+  - {fileID: 6714153476484281080}
+  - {fileID: -484135230960681438}
+  - {fileID: 1623953354053543253}
   EditorParameters: []
   MasterBanks:
   - {fileID: -5639210551741677901}
   StringsBanks:
   - {fileID: -63992952461618684}
   cacheVersion: 131858
-  cacheTime: 639089311020910534
+  cacheTime: 639090070563877801
   SerializableEventsDict:
-  - key: event:/Music
-    index: 0
-  - key: event:/SFX/Sprite/Sprite Collected
-    index: 1
-  - key: event:/SFX/Sprite/Sprite Dies
-    index: 2
   - key: event:/SFX/Environment/Lever
-    index: 3
+    index: 0
   - key: event:/SFX/Environment/Fire_Crackle
-    index: 4
+    index: 1
   - key: event:/SFX/Sprite/Sprite_Used_Earth
-    index: 5
+    index: 2
   - key: event:/SFX/Player/Player_Jump
-    index: 6
+    index: 3
   - key: event:/SFX/Player/Player_Walk
-    index: 7
+    index: 4
   - key: event:/SFX/Environment/Ambiance
-    index: 8
+    index: 5
   - key: event:/SFX/Sprite/Sprite_Used_Fire
-    index: 9
+    index: 6
   - key: event:/SFX/Player/Player_Land
-    index: 10
+    index: 7
   - key: event:/SFX/Environment/Impaled
-    index: 11
+    index: 8
   - key: event:/SFX/Sprite/Sprite_Used_Water
-    index: 12
+    index: 9
   - key: event:/SFX/Environment/Splash
-    index: 13
-  - key: event:/SFX/Sprite/Sprite_Dies
-    index: 14
+    index: 10
   - key: event:/SFX/Sprite/Sprite_Used_Air
+    index: 11
+  - key: event:/SFX/UI/Start
+    index: 12
+  - key: event:/Music
+    index: 13
+  - key: event:/SFX/Sprite/Sprite Collected
+    index: 14
+  - key: event:/SFX/Sprite/Sprite Dies
     index: 15
+  - key: event:/SFX/Sprite/Sprite_Dies
+    index: 16
+  - key: event:/SFX/Sprite/Sprite_Success
+    index: 17
+  - key: event:/SFX/Player/Player_Throw
+    index: 18
 --- !u!114 &303070637014982456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +420,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1623953354053543253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/Player_Throw
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Player/Player_Throw
+  Guid:
+    Data1: -664985096
+    Data2: 1177955270
+    Data3: -1971904577
+    Data4: -1014640691
+  Banks:
+  - {fileID: 8477919641142475505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2327632230987791536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,6 +465,57 @@ MonoBehaviour:
     Data2: 1248729315
     Data3: 924341136
     Data4: -469513646
+  Banks:
+  - {fileID: 8477919641142475505}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3358669567016513186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Sprite Collected
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Sprite Collected
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2064816297
+    data2: 2769375032
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &4547787509989630589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Start
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/UI/Start
+  Guid:
+    Data1: -1226397567
+    Data2: 1235915873
+    Data3: -1340527437
+    Data4: 112710533
   Banks:
   - {fileID: 8477919641142475505}
   IsStream: 0
@@ -429,7 +552,25 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4944054500411096962
+--- !u!114 &5922884898205698323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/FMOD/Banks/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 639090067585572158
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6714153476484281080
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -456,54 +597,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &5228641668474474683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/Music
-  Guid:
-    Data1: 1996726529
-    Data2: 1320705181
-    Data3: 730096521
-    Data4: 691744501
-  Banks:
-  - {fileID: 5922884898205698323}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -996983073555943313}
-  - {fileID: -6340628205458432001}
-  - {fileID: -5924843446621113663}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1030344
---- !u!114 &5922884898205698323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: Assets/FMOD/Banks/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 639089268224932924
-  FileSizes: []
-  Exists: 1
 --- !u!114 &6759946490545731846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +651,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8372252248506975276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Level loaded
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Level loaded
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2233119576
+    data2: 2326627525
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8477919641142475505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,36 +690,9 @@ MonoBehaviour:
   Path: Assets/FMOD/Banks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 639089311020910534
+  lastModified: 639090070563877801
   FileSizes: []
   Exists: 1
---- !u!114 &9011763486978892590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Sprite/Sprite Collected
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/SFX/Sprite/Sprite Collected
-  Guid:
-    Data1: 1995767816
-    Data2: 1155710561
-    Data3: -336532060
-    Data4: -1118969771
-  Banks:
-  - {fileID: 8477919641142475505}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &9015559091084768672
 MonoBehaviour:
   m_ObjectHideFlags: 0

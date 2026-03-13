@@ -18,8 +18,13 @@ public class FireFlame : MonoBehaviour, IResettable
     {        
         // 🔥 Start fire loop sound
         AudioManager.Instance.StartFireLoop(gameObject);
+        Invoke(nameof(PlaySuccessSound), 1.9f);
 
         StartCoroutine(GrowOverTime(2f));             
+    }
+    void PlaySuccessSound()
+    {
+        AudioManager.Instance.PlaySpriteSuccess();
     }
 
     

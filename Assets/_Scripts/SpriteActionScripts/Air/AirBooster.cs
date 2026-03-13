@@ -11,12 +11,17 @@ public class AirBooster : MonoBehaviour, IResettable
     {
         Destroy(gameObject);
     }
-
+   
     [SerializeField] private float boostForce = 20f;
     
     void Start()
     {
+        Invoke(nameof(PlaySuccessSound), 0.7f);
         Destroy(gameObject, 5f);
+    }
+    void PlaySuccessSound()
+    {
+        AudioManager.Instance.PlaySpriteSuccess();
     }
 
     private void OnTriggerStay2D(Collider2D collision)

@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   levelCatalog: {fileID: 11400000, guid: 4d087eff2c4b7ef40823bff0d0233274, type: 2}
+  activeLevelRefs: []
 --- !u!1 &115600085
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,6 +223,13 @@ MonoBehaviour:
       Data3: -594140797
       Data4: -86750156
     Path: event:/SFX/Environment/Ambiance
+  startGameEvent:
+    Guid:
+      Data1: -1226397567
+      Data2: 1235915873
+      Data3: -1340527437
+      Data4: 112710533
+    Path: event:/SFX/UI/Start
   leverPullEvent:
     Guid:
       Data1: -1408600546
@@ -243,6 +251,13 @@ MonoBehaviour:
       Data3: 2097637257
       Data4: -669694912
     Path: event:/SFX/Player/Player_Jump
+  throwEvent:
+    Guid:
+      Data1: -664985096
+      Data2: 1177955270
+      Data3: -1971904577
+      Data4: -1014640691
+    Path: event:/SFX/Player/Player_Throw
   landingEvent:
     Guid:
       Data1: -1986069392
@@ -257,6 +272,13 @@ MonoBehaviour:
       Data3: -336532060
       Data4: -1118969771
     Path: event:/SFX/Sprite/Sprite Collected
+  spriteSuccessEvent:
+    Guid:
+      Data1: 1042790690
+      Data2: 1117097876
+      Data3: 544172192
+      Data4: -1655382578
+    Path: event:/SFX/Sprite/Sprite_Success
   waterDropEvent:
     Guid:
       Data1: 2119793283
@@ -292,6 +314,13 @@ MonoBehaviour:
       Data3: -1973173345
       Data4: 159803583
     Path: event:/SFX/Environment/Impaled
+  splashEvent:
+    Guid:
+      Data1: 1171759291
+      Data2: 1163296830
+      Data3: -736828510
+      Data4: -883830963
+    Path: event:/SFX/Environment/Splash
   footstepLoopEvent:
     Guid:
       Data1: -469500596
