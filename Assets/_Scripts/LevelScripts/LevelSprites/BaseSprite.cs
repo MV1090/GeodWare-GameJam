@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BaseSprite : MonoBehaviour, IResettable
@@ -6,6 +7,7 @@ public class BaseSprite : MonoBehaviour, IResettable
     Rigidbody2D rb;
 
     bool rbSimulation;
+    bool isActive;
 
     void Start()
     {
@@ -15,15 +17,20 @@ public class BaseSprite : MonoBehaviour, IResettable
 
     public void SaveState()
     {
+        isActive = gameObject.activeSelf;
         startPos = transform.position;
         rbSimulation = rb.simulated;
     }
 
     public void ResetState()
     {
+        gameObject.SetActive(isActive);
+        if (!isActive)
+            return;
+
         transform.position = startPos;
         rb.simulated = rbSimulation;
-        gameObject.SetActive(true);
+       //gameObject.SetActive(true);
         if (transform.parent != null)
             transform.SetParent(null);
     }
@@ -39,6 +46,16 @@ public class BaseSprite : MonoBehaviour, IResettable
         {
             gameObject.SetActive(false);
         }
+
+        if (collision.gameObject.tag == "Podium")
+        {
+            if (collision.gameObject.TryGetComponent(out PodiumScript podiumScript))
+            {
+                podiumScript.SetActivated();
+                gameObject.SetActive(false);
+            }
+        }
+
 
     }
 }

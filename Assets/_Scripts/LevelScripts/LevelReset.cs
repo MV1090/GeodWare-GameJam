@@ -11,7 +11,7 @@ public class LevelReset : MonoBehaviour
         HashSet<IResettable> processed = new();
 
         foreach (GameObject resettable in resettableObjects)
-        {
+        {          
             if (resettable.TryGetComponent(out IResettable resettableComponent))
             {
                 resettableComponent.ResetState();

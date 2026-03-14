@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Test-Cat
   m_EditorClassIdentifier: Assembly-CSharp::Level_Catalog_Scriptable
   allLevels:
-  - {fileID: 11400000, guid: 9bebfac09ad454053b47d86386b2380d, type: 2}
+  - {fileID: 11400000, guid: 220188a18f235f94184b1379448abfc4, type: 2}
+  - {fileID: 11400000, guid: 967e07c36477b904a81f9dff7cd50f4d, type: 2}

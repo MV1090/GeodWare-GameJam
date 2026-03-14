@@ -20,8 +20,15 @@ public class SpawnPoint : MonoBehaviour
 
         foreach (GameObject resettable in levelReset.resettableObjects)
         {
-            if (resettable.TryGetComponent(out IResettable resettableComponent))
+
+            if (resettable.activeInHierarchy == false)
             {
+                Debug.LogWarning("A resettable object in the levelReset script is null. Please check the inspector.");
+                continue;
+            }
+
+            if (resettable.TryGetComponent(out IResettable resettableComponent))
+            {              
                 resettableComponent.SaveState();
                 savedElementState = GameManager.instance.GetNextLevelElement();
             }

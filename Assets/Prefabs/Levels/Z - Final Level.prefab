@@ -101,9 +101,10 @@ GameObject:
   - component: {fileID: 9128581837049968009}
   - component: {fileID: 3757150577430746530}
   - component: {fileID: 4082274622491104195}
+  - component: {fileID: 7823074065266735855}
   m_Layer: 0
   m_Name: Podium (1)
-  m_TagString: Untagged
+  m_TagString: Podium
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -171,7 +172,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f98840542cc087942aaf63b10abb43f4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -215,7 +216,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.09}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -225,8 +226,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 0.3, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &7823074065266735855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44480826457448748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52da9d1301698d4aa7f8666e66f72d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FountainScript
+  activatedColor: {r: 0.10196079, g: 0.58431375, b: 0.1137255, a: 1}
+  element: 1
 --- !u!1 &274244019916967718
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,9 +253,10 @@ GameObject:
   - component: {fileID: 8404622736586385152}
   - component: {fileID: 5927543909799859337}
   - component: {fileID: 2973690899891950660}
+  - component: {fileID: 5614683082144731747}
   m_Layer: 0
   m_Name: Podium
-  m_TagString: Untagged
+  m_TagString: Podium
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,7 +324,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f98840542cc087942aaf63b10abb43f4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -352,7 +368,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.09}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -362,8 +378,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 0.3, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &5614683082144731747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274244019916967718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52da9d1301698d4aa7f8666e66f72d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FountainScript
+  activatedColor: {r: 0.83921576, g: 0.83921576, b: 0.83921576, a: 1}
+  element: 2
 --- !u!1 &597873877914487329
 GameObject:
   m_ObjectHideFlags: 0
@@ -9362,6 +9392,7 @@ GameObject:
   - component: {fileID: 5617796391131014104}
   - component: {fileID: 9020048426231464465}
   - component: {fileID: 5591707365836900037}
+  - component: {fileID: 2143298498594717839}
   m_Layer: 0
   m_Name: Z - Final Level
   m_TagString: Untagged
@@ -9439,6 +9470,33 @@ MonoBehaviour:
   - {fileID: 2258818457754277495}
   - {fileID: 3570671561492005689}
   - {fileID: 4042245998510044844}
+  - {fileID: 274244019916967718}
+  - {fileID: 44480826457448748}
+  - {fileID: 6080743651219412167}
+  - {fileID: 1991482417534372993}
+--- !u!114 &2143298498594717839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952346303806024817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98d8b6e15abc1e148977ff22fb028876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FinalLevel
+  sprites:
+  - {fileID: 6014172586592457565}
+  - {fileID: 7235183102507556153}
+  - {fileID: 3804661726840521562}
+  - {fileID: 1984768449101691825}
+  podiums:
+  - {fileID: 274244019916967718}
+  - {fileID: 44480826457448748}
+  - {fileID: 6080743651219412167}
+  - {fileID: 1991482417534372993}
+  activatedPodiums: 
 --- !u!1 &1991482417534372993
 GameObject:
   m_ObjectHideFlags: 0
@@ -9450,9 +9508,10 @@ GameObject:
   - component: {fileID: 6755195467845268141}
   - component: {fileID: 5461353133423850689}
   - component: {fileID: 7033169947791457225}
+  - component: {fileID: 3145097559508047511}
   m_Layer: 0
   m_Name: Podium (3)
-  m_TagString: Untagged
+  m_TagString: Podium
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9520,7 +9579,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f98840542cc087942aaf63b10abb43f4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -9564,7 +9623,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.09}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9574,8 +9633,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 0.3, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &3145097559508047511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991482417534372993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52da9d1301698d4aa7f8666e66f72d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FountainScript
+  activatedColor: {r: 0.19607845, g: 0.41960788, b: 0.76470596, a: 1}
+  element: 4
 --- !u!1 &2541575330392571986
 GameObject:
   m_ObjectHideFlags: 0
@@ -31894,9 +31967,10 @@ GameObject:
   - component: {fileID: 5782802930700801409}
   - component: {fileID: 3966876082855187917}
   - component: {fileID: 9161238201369968035}
+  - component: {fileID: 4329784507179638858}
   m_Layer: 0
   m_Name: Podium (2)
-  m_TagString: Untagged
+  m_TagString: Podium
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31964,7 +32038,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f98840542cc087942aaf63b10abb43f4, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -32008,7 +32082,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.09}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -32018,8 +32092,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 0.3, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &4329784507179638858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6080743651219412167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52da9d1301698d4aa7f8666e66f72d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FountainScript
+  activatedColor: {r: 0.8196079, g: 0.18431373, b: 0.08235294, a: 1}
+  element: 3
 --- !u!1 &6399361635004072574
 GameObject:
   m_ObjectHideFlags: 0

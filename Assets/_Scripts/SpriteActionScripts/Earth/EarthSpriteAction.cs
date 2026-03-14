@@ -12,5 +12,16 @@ public class EarthSpriteAction : BaseSpriteAction
             Instantiate(platform.gameObject, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+
+        if (collision.gameObject.tag == "Podium")
+        {
+            PodiumScript podiumScript = collision.gameObject.GetComponent<PodiumScript>();
+            if (podiumScript != null && podiumScript.element == RescuedSprites.ElementSprite.Earth)
+            {
+                podiumScript.SetActivated();
+            }
+            Destroy(gameObject);
+        }
    }
+
 }

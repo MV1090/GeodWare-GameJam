@@ -15,6 +15,20 @@ public class FireSpriteAction : BaseSpriteAction
             fire.transform.SetParent(collision.gameObject.transform);
             Destroy(gameObject);
         }
+        
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Podium")
+        {
+            PodiumScript podiumScript = collision.gameObject.GetComponent<PodiumScript>();
+            if (podiumScript != null && podiumScript.element == RescuedSprites.ElementSprite.Fire)
+            {
+                podiumScript.SetActivated();
+            }
+            Destroy(gameObject);
+        }
+    }
+
 }

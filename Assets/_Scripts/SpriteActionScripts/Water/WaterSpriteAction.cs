@@ -16,6 +16,17 @@ public class WaterSpriteAction : BaseSpriteAction
             
             Destroy(gameObject, .5f);
         }
+
+        if (collision.gameObject.tag == "Podium")
+        {
+            PodiumScript podiumScript = collision.gameObject.GetComponent<PodiumScript>();
+            if (podiumScript != null && podiumScript.element == RescuedSprites.ElementSprite.Water)
+            {
+                podiumScript.SetActivated();
+            }
+            Destroy(gameObject);
+        }
+
     }
         
 }
