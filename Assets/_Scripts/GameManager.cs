@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +10,8 @@ public class GameManager : MonoBehaviour
     SpawnPoint currentSpawnPoint;
 
     public RescuedSprites.ElementSprite pendingLevelElement = RescuedSprites.ElementSprite.Default;
+
+    public event Action<RescuedSprites.ElementSprite> OnStateChanged;
 
     public bool levelLockedIn;
 
@@ -41,6 +45,8 @@ public class GameManager : MonoBehaviour
         levelLockedIn = true;
 
         Debug.Log("Next level locked to: " + element);
+
+        OnStateChanged?.Invoke(pendingLevelElement);
     }
 
     public RescuedSprites.ElementSprite GetNextLevelElement()
@@ -52,6 +58,8 @@ public class GameManager : MonoBehaviour
     {
         pendingLevelElement = RescuedSprites.ElementSprite.Default;
         levelLockedIn = false;
+
+        OnStateChanged?.Invoke(pendingLevelElement);
     }
 
     public void SetCurrentSpawnPoint(SpawnPoint spawnPoint)

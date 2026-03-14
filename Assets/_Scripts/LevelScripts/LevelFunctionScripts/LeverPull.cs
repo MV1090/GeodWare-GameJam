@@ -5,14 +5,16 @@ public class LeverPull : MonoBehaviour, IResettable
 {
     [SerializeField] GameObject[] effectedObjects;
     [SerializeField] LeverPull[] otherLevers;
+    [SerializeField] Sprite pulledSprite;
   
 
     private SpriteRenderer sr;     
 
     public bool canBePulled = true;
 
-    Color originalColor;
-    bool originalFlipX;
+    //Color originalColor;
+    //bool originalFlipX;
+    Sprite originalSprite;
     bool originalState;
 
     private void Start()
@@ -30,8 +32,9 @@ public class LeverPull : MonoBehaviour, IResettable
         ActivateOtherObjects();
         DisableOtherLevers();
 
-        sr.color = Color.red;
-        sr.flipX = false;
+        //sr.color = Color.red;
+        //sr.flipX = false;
+        sr.sprite = pulledSprite;
         canBePulled = false;
     }
 
@@ -55,21 +58,24 @@ public class LeverPull : MonoBehaviour, IResettable
         foreach (LeverPull lever in otherLevers)
         {
             lever.canBePulled = false;
-            lever.sr.color = Color.red;
+            //lever.sr.color = Color.red;
+            lever.sr.sprite = pulledSprite;
         }
-    }
+    }         
 
     public void SaveState()
     {
-        originalColor = sr.color;
-        originalFlipX = sr.flipX;
+        //originalColor = sr.color;
+        //originalFlipX = sr.flipX;
+        originalSprite = sr.sprite;
         originalState = canBePulled;
     }
 
     public void ResetState()
     {
-        sr.color = originalColor;
-        sr.flipX = originalFlipX;
+        //sr.color = originalColor;
+        //sr.flipX = originalFlipX;
+        sr.sprite = originalSprite;
         canBePulled = originalState;
     }
 }

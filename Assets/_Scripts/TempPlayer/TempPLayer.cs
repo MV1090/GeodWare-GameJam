@@ -74,7 +74,7 @@ public class TempPlayer : MonoBehaviour
 
     void Fire()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (fireProjectile != null)
             {
@@ -121,7 +121,7 @@ public class TempPlayer : MonoBehaviour
             anim.SetBool("hasLanded", true);
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             anim.SetBool("hasLanded", false);
@@ -161,7 +161,7 @@ public class TempPlayer : MonoBehaviour
 
     void PullLever()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 0.5f);
 
