@@ -50,6 +50,12 @@ public class TempPlayer : MonoBehaviour
 
     void Update()
     {
+        if (TutorialManager.instance.tutorialMenuOpen)
+        {
+            moveInput = 0;
+            return;
+        }
+
         if (isPauseMenuOpen) { PauseGame(); return; }                        
         
         HandleInput();
