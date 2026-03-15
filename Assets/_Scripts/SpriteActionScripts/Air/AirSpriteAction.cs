@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AirSpriteAction : BaseSpriteAction
+public class AirSpriteAction : BaseSpriteAction, IResettable
 {
     [SerializeField] AirBooster booster;
 
@@ -26,6 +26,17 @@ public class AirSpriteAction : BaseSpriteAction
             Destroy(gameObject);
         }
     }
+
+    public void SaveState()
+    {
+        // No state to save for this object
+    }
+
+    public void ResetState()
+    {
+        Destroy(gameObject);
+    }
+
 }
 
 

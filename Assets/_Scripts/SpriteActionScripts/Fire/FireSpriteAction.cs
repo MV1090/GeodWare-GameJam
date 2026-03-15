@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FireSpriteAction : BaseSpriteAction
+public class FireSpriteAction : BaseSpriteAction, IResettable
 {
     [SerializeField] FireFlame fireFlame;
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,6 +29,16 @@ public class FireSpriteAction : BaseSpriteAction
             }
             Destroy(gameObject);
         }
+    }
+
+    public void SaveState()
+    {
+        // No state to save for this object
+    }
+
+    public void ResetState()
+    {
+        Destroy(gameObject);
     }
 
 }

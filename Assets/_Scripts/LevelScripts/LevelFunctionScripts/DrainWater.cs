@@ -18,7 +18,7 @@ public class DrainWater : MonoBehaviour, IResettable
     [SerializeField] FloatingPlatform floatingPlatform;
     [SerializeField] float distance = 5f;
  
-    public IEnumerator Drain()
+    public IEnumerator Drain(GameObject triggerObject)
     {
         if (floatingPlatform != null)
         StartCoroutine(floatingPlatform.FloatUp());
@@ -36,6 +36,8 @@ public class DrainWater : MonoBehaviour, IResettable
             yield return null;
         }
         
+        Destroy(triggerObject);
+
         transform.position = targetPos;
         gameObject.SetActive(false);
     }

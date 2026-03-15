@@ -51,7 +51,7 @@ MonoBehaviour:
     speakerSprite: {fileID: 0}
   - speaker: 'spirit:'
     tutorialText: '"There is a puzzle ahead that blocks your path. I can release
-      my elemental power to help you. \nThrow me at something." If I strike the right
+      my elemental power to help you. \nThrow me at something. If I strike the right
       object my power will awaken." \n\nUse Q to throw.'
     trigger: 6
     speakerSprite: {fileID: 0}

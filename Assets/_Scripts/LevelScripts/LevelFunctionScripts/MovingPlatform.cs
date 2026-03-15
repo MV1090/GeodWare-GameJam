@@ -31,7 +31,8 @@ public class MovingPlatform : MonoBehaviour, IResettable
     }
 
     void FixedUpdate()
-    {
+    {       
+
         Vector2 newPos = Vector2.MoveTowards(rb.position, targetPos, moveSpeed * Time.fixedDeltaTime);
         moveDelta = newPos - previousPos;
 

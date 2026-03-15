@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WaterSpriteAction : BaseSpriteAction
+public class WaterSpriteAction : BaseSpriteAction, IResettable
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,9 +11,13 @@ public class WaterSpriteAction : BaseSpriteAction
             DrainWater drainWater = collision.gameObject.GetComponent<DrainWater>();
             AudioManager.Instance.PlayWaterDrop(transform.position);
 
-            StartCoroutine(drainWater.Drain()); 
+            StartCoroutine(drainWater.Drain(gameObject)); 
             
-            Destroy(gameObject, .5f);
+            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+
+            spriteRenderer.enabled = false; // Hide the sprite immediately
+
+            //Destroy(gameObject, .5f);
         }
 
         if (collision.gameObject.tag == "Podium")
@@ -27,5 +31,16 @@ public class WaterSpriteAction : BaseSpriteAction
         }
 
     }
-        
+
+    public void SaveState()
+    {
+        // No state to save for this object
+    }
+
+    public void ResetState()
+    {
+        StopAllCoroutines();
+        Destroy(gameObject);
+    }
+
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EarthSpriteAction : BaseSpriteAction
+public class EarthSpriteAction : BaseSpriteAction, IResettable
 {
 
     [SerializeField] GameObject platform;
@@ -23,5 +23,15 @@ public class EarthSpriteAction : BaseSpriteAction
             Destroy(gameObject);
         }
    }
+
+    public void SaveState()
+    {
+        // No state to save for this object
+    }
+
+    public void ResetState()
+    {
+        Destroy(gameObject);
+    }
 
 }
