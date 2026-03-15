@@ -101,9 +101,7 @@ public class LevelManager : MonoBehaviour
         previousLevel = nextLevel;
 
         GameManager.instance.levelLockedIn = false;
-    }
-
-    
+    }    
 
     private void RandomizeLevels()
     {
@@ -131,11 +129,24 @@ public class LevelManager : MonoBehaviour
 
     public void ResetLevels()
     {
+        GameManager.instance.ClearEvents();
+
         loadedLevels.Clear();
         foreach (var levelRef in activeLevelRefs)
         {
-            Destroy(levelRef);
+            Debug.Log("Resetting Levels");
+
+            LevelReset levelReset = levelRef.GetComponent<LevelReset>();
+
+            levelReset.ResetObjects();
+            if (levelRef != null)
+                Destroy(levelRef);
         }
         activeLevelRefs.Clear();
+
+        Destroy(GameObject.Find("FireSprite"));
+        Destroy(GameObject.Find("WaterSprite"));
+        Destroy(GameObject.Find("AirSprite"));
+        Destroy(GameObject.Find("EarthSprite"));
     }
 }

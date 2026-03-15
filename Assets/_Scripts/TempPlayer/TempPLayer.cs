@@ -192,7 +192,7 @@ public class TempPlayer : MonoBehaviour
             );
 
             GameManager.instance.GetCurrentSpawnPoint().levelReset.ResetObjects();
-            GameManager.instance.ClearNextLevel();
+            GameManager.instance.ClearNextLevel();            
 
             isDead = false;
         }

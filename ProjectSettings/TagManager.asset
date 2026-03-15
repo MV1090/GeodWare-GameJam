@@ -10,6 +10,8 @@ TagManager:
   - Crate
   - Water
   - DeathZone
+  - Podium
+  - Projectile
   layers:
   - Default
   - TransparentFX

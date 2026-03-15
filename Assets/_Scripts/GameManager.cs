@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> activeLevelRef;
 
+    public bool gameCompleted;
+
     private void Awake()
     {
         if (instance == null)
@@ -30,6 +32,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ClearEvents()
+    {
+        OnStateChanged = null;
+    }
     public void RegisterPlayer(RescuedSprites rescuedSprites)
     {
         rescuedSprites.OnStateChanged += SetNextLevelElement;

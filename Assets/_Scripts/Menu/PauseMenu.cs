@@ -18,7 +18,6 @@ public class PauseMenu : BaseMenu
 
     public void JumpToMainMenu()
     {
-        context.SetActiveMenu(MenuManager.MenuType.MainMenu);
-        
+        context.SetActiveMenu(MenuManager.MenuType.MainMenu);        
     }
 }

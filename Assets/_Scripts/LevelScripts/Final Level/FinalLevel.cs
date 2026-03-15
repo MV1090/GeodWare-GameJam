@@ -54,7 +54,8 @@ public class FinalLevel : MonoBehaviour, IResettable
         if(activatedPodiums.Count == podiums.Length)
         {
             Debug.Log("Win condition met!");
-            // Implement win condition logic here, such as loading the next level or displaying a victory screen.
+            GameManager.instance.gameCompleted = true;
+            MenuManager.instance.SetActiveMenu(MenuManager.MenuType.EndGame);
         }
     }
 

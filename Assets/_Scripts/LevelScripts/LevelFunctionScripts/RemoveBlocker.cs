@@ -4,9 +4,18 @@ public class RemoveBlocker : MonoBehaviour, IResettable
 {    
     void Start()
     {
-        //TempPlayer.instance.rescuedSprites.OnStateChanged += DestroyBlocker;
+        
+    }
+
+    private void OnEnable()
+    {        
         GameManager.instance.OnStateChanged += DestroyBlocker;
     }
+
+    private void OnDisable()
+    {
+        GameManager.instance.OnStateChanged -= DestroyBlocker;
+    }       
 
     void DestroyBlocker(RescuedSprites.ElementSprite element) 
     {
@@ -17,7 +26,7 @@ public class RemoveBlocker : MonoBehaviour, IResettable
         }
 
         Debug.Log("blocker should be destroyed");
-        //TempPlayer.instance.rescuedSprites.OnStateChanged -= DestroyBlocker;
+        
 
         gameObject.SetActive(false);
     }
