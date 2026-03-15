@@ -14,13 +14,31 @@ public class RemoveBlocker : MonoBehaviour, IResettable
 
     private void OnDisable()
     {
-        GameManager.instance.OnStateChanged -= DestroyBlocker;
-    }       
+        if (GameManager.instance != null)
+            GameManager.instance.OnStateChanged -= DestroyBlocker;
+        //UnsubscribeFromRescuedSprites();
+    }
+
+    //private void OnDestroy()
+    //{
+    //    if (GameManager.instance != null)
+    //        GameManager.instance.OnStateChanged -= DestroyBlocker;
+    //    //UnsubscribeFromRescuedSprites();
+    //}
+
+    //private void UnsubscribeFromRescuedSprites()
+    //{
+    //    if (TempPlayer.instance != null && TempPlayer.instance.rescuedSprites != null)
+    //        TempPlayer.instance.rescuedSprites.OnStateChanged -= DestroyBlocker;
+    //}
 
     void DestroyBlocker(RescuedSprites.ElementSprite element) 
     {
+        if (this == null) return;
         if (GameManager.instance.pendingLevelElement == RescuedSprites.ElementSprite.Default)
         {
+            if (gameObject == null)
+                return;
             gameObject.SetActive(true);
             return;
         }
@@ -39,6 +57,6 @@ public class RemoveBlocker : MonoBehaviour, IResettable
     public void ResetState()
     {
         gameObject.SetActive(true);
-        TempPlayer.instance.rescuedSprites.OnStateChanged += DestroyBlocker;
+        //TempPlayer.instance.rescuedSprites.OnStateChanged += DestroyBlocker;
     }
 }

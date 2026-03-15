@@ -4,6 +4,7 @@ public class BaseSprite : MonoBehaviour, IResettable
 {
     Vector2 startPos;
     Rigidbody2D rb;
+    Transform startParent;
 
     bool rbSimulation;
     bool isActive;
@@ -11,7 +12,8 @@ public class BaseSprite : MonoBehaviour, IResettable
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rbSimulation = rb.simulated;        
+        rbSimulation = rb.simulated;
+        startParent = transform.parent;
     }
 
     public void SaveState()
@@ -29,9 +31,8 @@ public class BaseSprite : MonoBehaviour, IResettable
 
         transform.position = startPos;
         rb.simulated = rbSimulation;
-       //gameObject.SetActive(true);
-        if (transform.parent != null)
-            transform.SetParent(null);
+        if (startParent != null)
+            transform.SetParent(startParent);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

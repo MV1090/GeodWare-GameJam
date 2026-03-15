@@ -130,6 +130,7 @@ public class LevelManager : MonoBehaviour
     public void ResetLevels()
     {
         GameManager.instance.ClearEvents();
+        TempPlayer.instance.ResetPlayer();
 
         loadedLevels.Clear();
         foreach (var levelRef in activeLevelRefs)

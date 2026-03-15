@@ -187,9 +187,7 @@ public class TempPlayer : MonoBehaviour
 
             transform.position = GameManager.instance.GetCurrentSpawnPoint().transform.position;
 
-            rescuedSprites.SetCurrentState(
-                GameManager.instance.GetCurrentSpawnPoint().savedElementState
-            );
+            rescuedSprites.SetCurrentState(GameManager.instance.GetCurrentSpawnPoint().savedElementState);
 
             GameManager.instance.GetCurrentSpawnPoint().levelReset.ResetObjects();
             GameManager.instance.ClearNextLevel();            
