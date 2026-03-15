@@ -6,6 +6,7 @@ public class FinalLevel : MonoBehaviour, IResettable
     [SerializeField] GameObject[] sprites;
     [SerializeField] PodiumScript[] podiums;
     [SerializeField] List<bool> activatedPodiums = new List<bool>();
+      
 
     private void Awake()
     {

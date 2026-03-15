@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 743a379d72c331e48a401fbb8bcf5f83, type: 3}
+  m_Name: EndGameSequence
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialSequence
+  tutorialSteps:
+  - speaker: 'Player:'
+    tutorialText: '"Wait... \n This form.... \n This Magic....\n No, That can''t
+      be right."'
+    trigger: 0
+    speakerSprite: {fileID: 0}
+  - speaker: 'Wizard:'
+    tutorialText: '"The Spell.... I remember now \n I was searching for the four
+      element style. \n A power no mage has ever mastered."'
+    trigger: 0
+    speakerSprite: {fileID: 0}
+  - speaker: 'Wizard:'
+    tutorialText: '"The Spirits would never give up their power willingly \n Only
+      being sacrificed by an innocnet could release."'
+    trigger: 0
+    speakerSprite: {fileID: 0}
+  - speaker: 'Wizard:'
+    tutorialText: '"So I cast a spell on myself... \n I forgot who I was \n and all
+      the bad things I''ve done \n I became an innocent."'
+    trigger: 0
+    speakerSprite: {fileID: 0}
+  - speaker: 'Wizard:'
+    tutorialText: '"Now I am unstoppable\n I am the master of four element style
+      \n This world is mine."'
+    trigger: 0
+    speakerSprite: {fileID: 0}
