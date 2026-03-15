@@ -11,6 +11,7 @@ public class DrainWater : MonoBehaviour, IResettable
 
     public void ResetState()
     {
+        StopAllCoroutines();
         transform.position = originalPosition;
     }
 
@@ -20,7 +21,7 @@ public class DrainWater : MonoBehaviour, IResettable
     public IEnumerator Drain()
     {
         if (floatingPlatform != null)
-            StartCoroutine(floatingPlatform.FloatUp());
+        StartCoroutine(floatingPlatform.FloatUp());
 
         Vector2 startPos = transform.position;
         Vector2 targetPos = startPos + Vector2.down * distance;
