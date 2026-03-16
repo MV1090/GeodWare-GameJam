@@ -19,7 +19,8 @@ public class TutorialTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             hasBeenTriggered = true;
-
+            TutorialManager.instance.tutorialMenuOpen = true;
+            AudioManager.Instance.StopFootsteps();
             TutorialManager.instance.TriggerEvent(triggerType);
             //TutorialManager.instance.tutorialMenu.gameObject.SetActive(true);
         }               

@@ -22,6 +22,7 @@ public class TutorialMenu : MonoBehaviour
         if (index + 1 >= sequence.tutorialSteps.Count)
         {
             gameObject.SetActive(false);
+            TutorialManager.instance.tutorialMenuOpen = false;
             return;
         }
 
@@ -33,6 +34,7 @@ public class TutorialMenu : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            TutorialManager.instance.tutorialMenuOpen = false;
         }
     }
 
