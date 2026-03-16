@@ -107,6 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovingPlatform
   moveDistance: -6
   moveSpeed: 2
+  moveHorizontal: 0
+  moveVertical: 0
 --- !u!61 &8901652838298977567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -117,7 +119,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: dd89b65fe686d9f4d9c195af19d9e13e, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

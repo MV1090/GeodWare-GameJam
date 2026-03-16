@@ -131,7 +131,7 @@ public class LevelManager : MonoBehaviour
     {
         GameManager.instance.ClearEvents();
         TempPlayer.instance.ResetPlayer();
-
+        TempPlayer.instance.ResetPlayerSprite();
         loadedLevels.Clear();
         foreach (var levelRef in activeLevelRefs)
         {

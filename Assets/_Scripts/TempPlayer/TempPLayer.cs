@@ -7,6 +7,10 @@ public class TempPlayer : MonoBehaviour
     public RescuedSprites rescuedSprites;
     private FireProjectile fireProjectile;
 
+    [SerializeField] Sprite evilWizard;
+    private Sprite originalSprite;
+
+
     [Header("Movement")]
     public float moveSpeed = 8f;
 
@@ -41,6 +45,8 @@ public class TempPlayer : MonoBehaviour
         rescuedSprites = GetComponent<RescuedSprites>();
         fireProjectile = GetComponent<FireProjectile>();
         anim = GetComponent<Animator>();
+
+        originalSprite = sr.sprite;
     }
 
     private void Start()
@@ -59,7 +65,7 @@ public class TempPlayer : MonoBehaviour
             return;
         }
 
-        if (isPauseMenuOpen) { PauseGame(); return; }                        
+        //if (isPauseMenuOpen) { PauseGame(); return; }                        
         
         HandleInput();
         HandleJump();
@@ -67,7 +73,7 @@ public class TempPlayer : MonoBehaviour
         PullLever();
         Fire();
         ResetPlayer();
-        PauseGame();
+        //PauseGame();
     }
 
     void FixedUpdate()
@@ -209,26 +215,36 @@ public class TempPlayer : MonoBehaviour
         footstepsActive = false;
     }
 
-    
-
-    void PauseGame()
+    public void SetPlayerSpriteToEvilWizard()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPauseMenuOpen)
-            {
-                if (MenuManager.instance != null)
-                {
-                    MenuManager.instance.JumpBack();
-                }
-                isPauseMenuOpen = false;
-            }
-            else
-            {
-                if (MenuManager.instance != null)
-                    MenuManager.instance.SetActiveMenu(MenuManager.MenuType.PauseMenu);
-                isPauseMenuOpen = true;
-            }
-        }
+        anim.enabled = false;        
+        sr.sprite = evilWizard;
     }
+    public void ResetPlayerSprite()
+    {
+        anim.enabled = true;        
+        sr.sprite = originalSprite;
+    }
+
+
+    //void PauseGame()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        if (isPauseMenuOpen)
+    //        {
+    //            if (MenuManager.instance != null)
+    //            {
+    //                MenuManager.instance.JumpBack();
+    //            }
+    //            isPauseMenuOpen = false;
+    //        }
+    //        else
+    //        {
+    //            if (MenuManager.instance != null)
+    //                MenuManager.instance.SetActiveMenu(MenuManager.MenuType.PauseMenu);
+    //            isPauseMenuOpen = true;
+    //        }
+    //    }
+    //}
 }

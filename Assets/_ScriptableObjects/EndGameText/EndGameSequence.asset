@@ -25,7 +25,7 @@ MonoBehaviour:
     speakerSprite: {fileID: 0}
   - speaker: 'Wizard:'
     tutorialText: '"The Spirits would never give up their power willingly \n Only
-      being sacrificed by an innocnet could release."'
+      being sacrificed by an innocnet could release their power."'
     trigger: 0
     speakerSprite: {fileID: 0}
   - speaker: 'Wizard:'
@@ -36,5 +36,10 @@ MonoBehaviour:
   - speaker: 'Wizard:'
     tutorialText: '"Now I am unstoppable\n I am the master of four element style
       \n This world is mine."'
+    trigger: 0
+    speakerSprite: {fileID: 0}
+  - speaker: 
+    tutorialText: 'GAME COMPLETED, you did it!!!.... kind of.... if world domination
+      is your goal, CONGRATULATIONS!  '
     trigger: 0
     speakerSprite: {fileID: 0}

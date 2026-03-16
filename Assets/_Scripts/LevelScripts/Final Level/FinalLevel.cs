@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,8 +6,7 @@ public class FinalLevel : MonoBehaviour, IResettable
 {
     [SerializeField] GameObject[] sprites;
     [SerializeField] PodiumScript[] podiums;
-    [SerializeField] List<bool> activatedPodiums = new List<bool>();
-      
+    [SerializeField] List<bool> activatedPodiums = new List<bool>();   
 
     private void Awake()
     {
@@ -55,9 +55,15 @@ public class FinalLevel : MonoBehaviour, IResettable
         if(activatedPodiums.Count == podiums.Length)
         {
             Debug.Log("Win condition met!");
-            GameManager.instance.gameCompleted = true;
-            MenuManager.instance.SetActiveMenu(MenuManager.MenuType.EndGame);
+            StartCoroutine(WaitAtEndGame());
         }
+    }
+
+    IEnumerator WaitAtEndGame()
+    {
+        yield return new WaitForSeconds(1f);
+        GameManager.instance.gameCompleted = true;
+        MenuManager.instance.SetActiveMenu(MenuManager.MenuType.EndGame);
     }
 
     void CheckLastLevelSprite() 
@@ -78,4 +84,6 @@ public class FinalLevel : MonoBehaviour, IResettable
                 break;
         }
     }
+
+
 }

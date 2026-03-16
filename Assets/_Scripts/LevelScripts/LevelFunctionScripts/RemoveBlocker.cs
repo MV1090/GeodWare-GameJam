@@ -1,7 +1,10 @@
 using UnityEngine;
 
 public class RemoveBlocker : MonoBehaviour, IResettable
-{    
+{
+
+    [SerializeField] GameObject blockerText;
+
     void Start()
     {
         
@@ -17,6 +20,22 @@ public class RemoveBlocker : MonoBehaviour, IResettable
         if (GameManager.instance != null)
             GameManager.instance.OnStateChanged -= DestroyBlocker;
         //UnsubscribeFromRescuedSprites();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            blockerText.SetActive(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            blockerText.SetActive(false);
+        }
     }
 
     //private void OnDestroy()

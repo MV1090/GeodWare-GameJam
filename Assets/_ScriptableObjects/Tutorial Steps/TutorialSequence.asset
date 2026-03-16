@@ -40,8 +40,7 @@ MonoBehaviour:
     trigger: 4
     speakerSprite: {fileID: 0}
   - speaker: Earth
-    tutorialText: '"You can still help us! \nPull the lever and we will escape. \nBut
-      you can only save one of us."'
+    tutorialText: '"You can still help us! \nPull the lever and we will escape."'
     trigger: 4
     speakerSprite: {fileID: 0}
   - speaker: 'Air:'
@@ -49,14 +48,14 @@ MonoBehaviour:
       the lever."  \n\nUse E while standing near it.'
     trigger: 4
     speakerSprite: {fileID: 0}
+  - speaker: 'Air:'
+    tutorialText: '"Don''t worry if you make a mistake, this place has powers to
+      rewind time." \n\nUse R to rest level. '
+    trigger: 4
+    speakerSprite: {fileID: 0}
   - speaker: 'spirit:'
     tutorialText: '"There is a puzzle ahead that blocks your path. I can release
       my elemental power to help you. \nThrow me at something. If I strike the right
       object my power will awaken." \n\nUse Q to throw.'
-    trigger: 6
-    speakerSprite: {fileID: 0}
-  - speaker: 'spirit:'
-    tutorialText: '"Don''t worry if you make a mistake, this place has powers to
-      rewind time." \n\nUse R to rest level. '
     trigger: 6
     speakerSprite: {fileID: 0}
